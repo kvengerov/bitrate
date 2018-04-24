@@ -1,15 +1,37 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">BitRate</a>
 
-  <a class="navbar-brand"><img src="" alt=""></a>
-  <span class="navbar-text">BITrate</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <ul class="nav nav-navbar">
-    <li class="nav-link" routerLinkActive="active"><a [routerLink]="['/']">Home</a></li>
-    <li class="nav-link" routerLinkActive="active"><a [routerLink]="['/collection']">Collection</a></li>
-    <li class="nav-link" ><a href="#">Upload</a></li>
-    <li class="nav-link" ><input type="text" placeholder="Search"></li>
-    <li class="nav-link" ><a [routerLink]="">Sign In</a></li>
-    <li class="nav-link" ><a [routerLink]="">Create account</a></li>
-    <li class="nav-link" ><a href="#">En</a></li>
-  </ul>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/collection']">Collection</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/upload']">Upload</a>
+        </li>
+        <li>
+          <form class="form-inline my-2 my-md-0">
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+          </form>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Sign In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Create account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">En</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
