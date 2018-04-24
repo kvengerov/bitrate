@@ -1,11 +1,15 @@
-<nav class="navbar">
-      <ul class="nav navbar-nav">
-        <li routerLinkActive="">Home</li>
-        <li routerLink="/collection">Collection</li>
-        <li><a href="#">Upload</a></li>
-        <li><input type="text" placeholder="Search"></li>
-        <li><a href="#">Sign In</a></li>
-        <li><a href="#">Create account</a></li>
-        <li><a href="#">En</a></li>
-      </ul>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+
+  <a class="navbar-brand"><img src="" alt=""></a>
+  <span class="navbar-text">BITrate</span>
+
+  <ul class="nav nav-navbar">
+    <li class="nav-link" routerLinkActive="active"><a [routerLink]="['/']">Home</a></li>
+    <li class="nav-link" routerLinkActive="active"><a [routerLink]="['/collection']">Collection</a></li>
+    <li class="nav-link" ><a href="#">Upload</a></li>
+    <li class="nav-link" ><input type="text" placeholder="Search"></li>
+    <li class="nav-link" ><a [routerLink]="">Sign In</a></li>
+    <li class="nav-link" ><a [routerLink]="">Create account</a></li>
+    <li class="nav-link" ><a href="#">En</a></li>
+  </ul>
 </nav>
