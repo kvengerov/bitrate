@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './routing/app.routing.module';
 
 import { AppComponent } from './app.component';
@@ -9,6 +9,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { CollectionComponent } from './component/collection/collection.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { UploadComponent } from './component/upload/upload.component';
+import { PopularComponent } from './component/popular/popular.component';
 
 
 @NgModule({
@@ -17,12 +18,13 @@ import { UploadComponent } from './component/upload/upload.component';
     NavbarComponent,
     CollectionComponent,
     ProfileComponent,
-    UploadComponent
+    UploadComponent,
+    PopularComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
