@@ -10,6 +10,7 @@ import { CollectionComponent } from './component/collection/collection.component
 import { ProfileComponent } from './component/profile/profile.component';
 import { UploadComponent } from './component/upload/upload.component';
 import { PopularComponent } from './component/popular/popular.component';
+import { LastfmService } from './service/lastfm.service';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { PopularComponent } from './component/popular/popular.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [LastfmService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

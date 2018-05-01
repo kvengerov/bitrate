@@ -4,20 +4,19 @@ import { LastfmService } from '../../service/lastfm.service';
 @Component({
   selector: 'app-popular',
   templateUrl: './popular.component.html',
-  styleUrls: ['./popular.component.scss'],
-  providers: [LastfmService]
+  styleUrls: ['./popular.component.scss']
 })
 export class PopularComponent implements OnInit {
-  topArtists:any = [];
+  topTracks:any = [];
 
-  @Input() artist;
+  @Input() track;
 
-  constructor(private lastfmService: LastfmService) { }
+  constructor(private _lastfmService: LastfmService) { }
 
   ngOnInit() {
-    this.lastfmService.getTopArtists().subscribe(data => {
-      console.log(JSON.parse(data));
-      this.topArtists = JSON.parse(data);
+    this._lastfmService.getTopTracks().subscribe(tracks => {
+      console.log(tracks);
+      this.topTracks = tracks;
     })
   }
 
