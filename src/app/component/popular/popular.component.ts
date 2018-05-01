@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LastfmService } from '../../service/lastfm.service';
 
 @Component({
@@ -10,13 +10,14 @@ import { LastfmService } from '../../service/lastfm.service';
 export class PopularComponent implements OnInit {
   topArtists:any = [];
 
+  @Input() artist;
+
   constructor(private lastfmService: LastfmService) { }
 
   ngOnInit() {
-    this.lastfmService.getTopArtists().subscribe(topArtists => {
-      console.log(topArtists);
-      // this.topArtists = this.topArtists;
-      this.topArtists = topArtists;
+    this.lastfmService.getTopArtists().subscribe(data => {
+      console.log(JSON.parse(data));
+      this.topArtists = JSON.parse(data);
     })
   }
 
