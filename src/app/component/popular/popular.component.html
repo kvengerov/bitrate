@@ -1,11 +1,15 @@
-<div class="thumb-container">
+<div class="thumb-container" *ngFor="let track of topTracks">
   <div class="thumbs">
     <div class="artist-info">
-      <p>Top Tracks:</p>
-      <p>{{ topTracks }}</p>
+      <p>Artist: {{ track.artist.name }}</p>
+      <p>Track: {{ track.name }}</p>
+      <p>Track URL: {{ track.url }}</p>
+      <p>Track IMG: {{ track.image }}</p>
+      <hr>
     </div>
   </div>
 </div>
+
 
 
 

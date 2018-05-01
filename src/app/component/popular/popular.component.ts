@@ -15,8 +15,8 @@ export class PopularComponent implements OnInit {
 
   ngOnInit() {
     this._lastfmService.getTopTracks().subscribe(tracks => {
-      console.log(tracks);
-      this.topTracks = tracks;
+      console.log(tracks.tracks.track);
+      this.topTracks = tracks.tracks.track;
     })
   }
 
