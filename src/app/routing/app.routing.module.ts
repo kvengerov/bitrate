@@ -4,11 +4,12 @@ import { CollectionComponent } from '../component/collection/collection.componen
 import { ProfileComponent } from '../component/profile/profile.component';
 import { UploadComponent } from '../component/upload/upload.component';
 import { PopularComponent } from '../component/popular/popular.component';
+import {PopularListComponent} from '../component/popular/popular-list/popular-list.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: PopularComponent
+    component: PopularListComponent
   },
   {
     path: 'collection',

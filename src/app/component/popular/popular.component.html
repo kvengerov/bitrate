@@ -1,13 +1,13 @@
-<div class="container" >
-  <div class="row">
-      <div class="col-4">
-        <div class="card card-track" *ngFor="let track of topTracks">
-          <div class="card-block">
-            <img src="{{ track.image[2]['#text'] }}" alt="{{ track.artist.name }}" />
-            <p>Artist: {{ track.artist.name }}</p>
-            <a href="{{ track.url }}">{{ track.name }}</a>
-          </div>
-        </div>
-      </div>
+<div class="card" >
+  <div class="card-block">
+    <img src="{{ track.image[2]['#text'] }}" alt="{{ track.artist.name }}" />
+    <div>
+      <ul>
+        <li><a href="{{ track.artist.url }}">{{ track.artist.name }}</a></li>
+        <li><a href="{{ track.url }}">{{ track.name }}</a></li>
+      </ul>
+    </div>
   </div>
 </div>
+
+

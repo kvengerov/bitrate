@@ -13,6 +13,7 @@ import { PopularComponent } from './component/popular/popular.component';
 import { LastfmService } from './service/lastfm.service';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { TokenService } from './service/token.service';
+import { PopularListComponent } from './component/popular/popular-list/popular-list.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { TokenService } from './service/token.service';
     CollectionComponent,
     ProfileComponent,
     UploadComponent,
-    PopularComponent
+    PopularComponent,
+    PopularListComponent,
   ],
   imports: [
     BrowserModule,
