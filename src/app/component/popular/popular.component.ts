@@ -7,7 +7,7 @@ import { LastfmService } from '../../service/lastfm.service';
   styleUrls: ['./popular.component.scss']
 })
 export class PopularComponent implements OnInit {
-  topTracks:any = [];
+  topTracks: any = [];
 
   @Input() track;
 
