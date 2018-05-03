@@ -14,7 +14,7 @@ export class LastfmService {
   constructor(private httpClient: HttpClient) {}
 
   getTopTracks()  {
-    return this.httpClient.get(`${this.rootUrl}?method=tag.gettoptracks&tag=disco&limit=10&format=json`,
+    return this.httpClient.get(`${this.rootUrl}?method=tag.gettoptracks&tag=disco&limit=5&format=json`,
       {
       observe: 'body',
       responseType: 'json'
