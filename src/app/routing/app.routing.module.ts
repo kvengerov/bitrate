@@ -4,24 +4,16 @@ import { CollectionComponent } from '../component/collection/collection.componen
 import { ProfileComponent } from '../component/profile/profile.component';
 import { UploadComponent } from '../component/upload/upload.component';
 import {PopularListComponent} from '../component/popular/popular-list/popular-list.component';
+import {AuthComponent} from '../component/auth/auth.component';
+import {LoginComponent} from '../component/login/login.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: PopularListComponent
-  },
-  {
-    path: 'collection',
-    component: CollectionComponent
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent
-  },
-  {
-    path: 'upload',
-    component: UploadComponent
-  },
+  { path: '', component: PopularListComponent },
+  { path: 'collection', component: CollectionComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'upload', component: UploadComponent },
+  { path: 'login', component: LoginComponent },
+  { path: ':provider/auth', component: AuthComponent },
 
 ];
 

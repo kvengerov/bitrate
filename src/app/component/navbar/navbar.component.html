@@ -1,71 +1,31 @@
-<div class="navbar">
-  <div class="row">
-    <div class="col-md-4">
-      <ul class="navbar-list">
-        <li class="navbar-item">
-          <a [routerLink]="['/']">Home</a>
-        </li>
-        <li class="navbar-item" [routerLink]="['/collection']">Collection
-          <!--<a [routerLink]="['/collection']">Collection</a>-->
-        </li>
-        <li class="navbar-item">
-          <a [routerLink]="['/upload']">Upload</a>
-        </li>
-      </ul>
-    </div>
-    <div class="col-md-4">
-      <form class="form-search">
-        <input class="input-search" type="text" placeholder="Search">
-      </form>
-    </div>
-    <div class="col-md-4">
-      <ul class="navbar">
-        <li class="navbar-item">Sign In</li>
-        <li class="navbar-item">Create account</li>
-        <li class="navbar-item">En</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-
-
-<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
-  <!--<div class="container">-->
-    <!--&lt;!&ndash;<a class="navbar-brand" href="#">BitRate</a>&ndash;&gt;-->
-
-    <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">-->
-      <!--<span class="navbar-toggler-icon"></span>-->
-    <!--</button>-->
-
-    <!--<div class="collapse navbar-collapse" id="navbar">-->
-      <!--<ul class="navbar-nav col-md-4">-->
-        <!--<li class="nav-item active">-->
-          <!--<a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>-->
-        <!--</li>-->
-        <!--<li class="nav-item">-->
-          <!--<a class="nav-link" [routerLink]="['/collection']">Collection</a>-->
-        <!--</li>-->
-        <!--<li class="nav-item">-->
-          <!--<a class="nav-link" [routerLink]="['/upload']">Upload</a>-->
-        <!--</li>-->
-      <!--</ul>-->
-
-          <!--<form class="form-inline col-md-4">-->
-            <!--<input class="form-control" type="text" placeholder="Search" aria-label="Search">-->
-          <!--</form>-->
-
-        <!--<ul class="navbar-nav col-md-4">-->
-        <!--<li class="nav-item">-->
-          <!--<a class="nav-link disabled" href="#">Sign In</a>-->
-        <!--</li>-->
-        <!--<li class="nav-item">-->
-          <!--<a class="nav-link disabled" href="#">Create account</a>-->
-        <!--</li>-->
-        <!--<li class="nav-item">-->
-          <!--<a class="nav-link disabled" href="#">En</a>-->
-        <!--</li>-->
-      <!--</ul>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</nav>-->
+<ul class="nav">
+  <li>
+    <a [routerLink]="['/']">Home</a>
+  </li>
+  <li>
+    <a [routerLink]="['/collection']">Collection</a>
+  </li>
+  <li>
+    <a [routerLink]="['/upload']">Upload</a>
+  </li>
+  <li id="search">
+    <form action="" method="get">
+      <input type="text" name="search_text" id="search_text" placeholder="Search" />
+      <input type="button" name="search_button" id="search_button" />
+    </form>
+  </li>
+  <li>
+    <a [routerLink]="['/login']">Sign In</a>
+  </li>
+  <li>
+    <a [routerLink]="['/upload']">Create account</a>
+  </li>
+  <li id="options">
+    <a href="#">Lang</a>
+    <ul class="subnav">
+      <li class="subnav">
+      <li><a href="#">En</a></li>
+      <li><a href="#">Ru</a></li>
+    </ul>
+  </li>
+</ul>

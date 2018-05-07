@@ -2,10 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-popular',
-  templateUrl: './popular.component.html',
-  styleUrls: ['./popular.component.scss']
+  templateUrl: './popular-item.component.html',
+  styleUrls: ['./popular-item.component.scss']
 })
-export class PopularComponent implements OnInit {
+export class PopularItemComponent implements OnInit {
 
   @Input() track;
 

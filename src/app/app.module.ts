@@ -9,11 +9,13 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { CollectionComponent } from './component/collection/collection.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { UploadComponent } from './component/upload/upload.component';
-import { PopularComponent } from './component/popular/popular.component';
+import { PopularItemComponent } from './component/popular/popular-list/popular-item/popular-item.component';
 import { LastfmService } from './service/lastfm.service';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { TokenService } from './service/token.service';
 import { PopularListComponent } from './component/popular/popular-list/popular-list.component';
+import { LoginComponent } from './component/login/login.component';
+import { AuthComponent } from './component/auth/auth.component';
 
 
 @NgModule({
@@ -23,8 +25,10 @@ import { PopularListComponent } from './component/popular/popular-list/popular-l
     CollectionComponent,
     ProfileComponent,
     UploadComponent,
-    PopularComponent,
+    PopularItemComponent,
     PopularListComponent,
+    LoginComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
