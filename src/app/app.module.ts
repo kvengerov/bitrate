@@ -10,12 +10,20 @@ import { CollectionComponent } from './component/collection/collection.component
 import { ProfileComponent } from './component/profile/profile.component';
 import { UploadComponent } from './component/upload/upload.component';
 import { PopularItemComponent } from './component/popular/popular-list/popular-item/popular-item.component';
-import { LastfmService } from './service/lastfm.service';
-import { AuthInterceptor } from './interceptor/auth.interceptor';
-import { TokenService } from './service/token.service';
 import { PopularListComponent } from './component/popular/popular-list/popular-list.component';
 import { LoginComponent } from './component/login/login.component';
 import { AuthComponent } from './component/auth/auth.component';
+
+import { AuthInterceptor } from './interceptor/auth.interceptor';
+
+import { LastfmService } from './service/lastfm.service';
+import { TokenService } from './service/token.service';
+import { AuthService } from './service/auth.service';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from 'environments/environment';
 
 
 @NgModule({
@@ -33,9 +41,13 @@ import { AuthComponent } from './component/auth/auth.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase, 'letslearn-dev'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [
+    AuthService,
     LastfmService,
     TokenService,
     {

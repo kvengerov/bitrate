@@ -16,7 +16,7 @@ export class PopularListComponent implements OnInit {
     this._lastfmService.getTopTracks().subscribe(tracks => {
       console.log(tracks.tracks.track);
       this.tracks = tracks.tracks.track;
-    })
+    });
   }
 
 }
