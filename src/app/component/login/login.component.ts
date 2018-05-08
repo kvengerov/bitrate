@@ -20,7 +20,14 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    const inputValue = this.form.value;
+    console.log(inputValue.email, inputValue.password);
 
+    // this.authService.login(inputValue.email, inputValue.password)
+    //   .subcribe(
+    //     success => //navigate,
+    //     error => alert(error)
+    //   )
   }
 
 }

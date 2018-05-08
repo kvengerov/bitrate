@@ -2,7 +2,7 @@
 
 <section class="login-container">
   <h1>Login to Account</h1><br>
-  <form autocomplete="off" novalidate [formGroup]="form">
+  <form autocomplete="off" novalidate [formGroup]="form" (submit)="login()">
     <input type="email" name="user" placeholder="E-mail" formControlName="email">
     <input type="password" name="pass" placeholder="Password" formControlName="password">
     <input type="submit" name="login" class="login login-modal-submit" value="Login">
