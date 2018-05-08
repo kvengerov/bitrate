@@ -13,7 +13,7 @@ export class PopularListComponent implements OnInit {
   constructor(private _lastfmService: LastfmService) { }
 
   ngOnInit() {
-    this._lastfmService.getTopTracks().subscribe(tracks => {
+    this._lastfmService.getTopTracks().subscribe((tracks: any) => {
       console.log(tracks.tracks.track);
       this.tracks = tracks.tracks.track;
     });

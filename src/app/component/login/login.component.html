@@ -14,12 +14,13 @@
   </div>
 </section>
 
+<a (click)="loginWithGoogle()" class="button button-google">Sign In with Google</a>
+<a (click)="loginWithFacebook()" class="button">Sign In with Facebook</a>
+
 <a href="https://www.facebook.com/v3.0/dialog/oauth?
   client_id=615550948797320&
   response_type=token&scope=user_location,publish_actions&
-  redirect_uri=http://localhost:4200/facebook/auth" class="button">Sign In with Facebook</a>
+  redirect_uri=http://localhost:4200/facebook/auth" class="button">Sign In with Facebook SDK</a>
 
-
-<p>audit user</p>
-
+<br>
 {{ user$ | async | json }}

@@ -79,14 +79,6 @@
 
 
 
-
-
-
-
-
-
-
-
 .button {
   display: inline-block;
   border: none;
@@ -119,6 +111,7 @@
   &:focus, &:hover {
     text-decoration: none;
     color: #fff;
+    cursor: pointer;
   }
   &:hover {
     background-color: lighten(#3b5998, 5%);
