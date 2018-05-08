@@ -15,10 +15,13 @@
     </form>
   </li>
   <li>
-    <a [routerLink]="['/login']">Sign In</a>
+    <a [routerLink]="['/login']" *ngIf="!isLoggedIn">Sign In</a>
   </li>
   <li>
-    <a [routerLink]="['/upload']">Create account</a>
+    <a (click)="logout()" [routerLink]="['/login']" *ngIf="isLoggedIn">Logout</a>
+  </li>
+  <li>
+    <a [routerLink]="['/upload']" *ngIf="!isLoggedIn">Create account</a>
   </li>
   <li id="options">
     <a href="#">Lang</a>
