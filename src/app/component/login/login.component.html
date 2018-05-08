@@ -1,6 +1,25 @@
 
 
+<section class="login-container">
+  <h1>Login to Account</h1><br>
+  <form autocomplete="off" novalidate [formGroup]="form">
+    <input type="email" name="user" placeholder="E-mail" formControlName="email">
+    <input type="password" name="pass" placeholder="Password" formControlName="password">
+    <input type="submit" name="login" class="login login-modal-submit" value="Login">
+  </form>
+
+  <div class="login-help">
+    <a href="#">Register</a> - <a href="#">Forgot Password</a>
+  </div>
+</section>
+
+
+
 <a href="https://www.facebook.com/v3.0/dialog/oauth?
   client_id=615550948797320&
   response_type=token&scope=user_location,publish_actions&
   redirect_uri=http://localhost:4200/facebook/auth" class="button">Sign In with Facebook</a>
+
+
+
+
