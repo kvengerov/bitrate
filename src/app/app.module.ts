@@ -7,7 +7,7 @@ import { AppRoutingModule } from './routing/app.routing.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
-import { CollectionComponent } from './component/collection/collection.component';
+// import { CollectionComponent } from './component/collection/collection.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { UploadComponent } from './component/upload/upload.component';
 import { PopularItemComponent } from './component/popular/popular-list/popular-item/popular-item.component';
@@ -31,7 +31,7 @@ import { environment } from 'environments/environment';
   declarations: [
     AppComponent,
     NavbarComponent,
-    CollectionComponent,
+    // CollectionComponent,
     ProfileComponent,
     UploadComponent,
     PopularItemComponent,
