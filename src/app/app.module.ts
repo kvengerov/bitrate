@@ -3,16 +3,16 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './routing/app.routing.module';
+import { AppRoutingModule } from './app.routing.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
-// import { CollectionComponent } from './component/collection/collection.component';
+
 import { ProfileComponent } from './component/profile/profile.component';
 import { UploadComponent } from './component/upload/upload.component';
 import { PopularItemComponent } from './component/popular/popular-list/popular-item/popular-item.component';
 import { PopularListComponent } from './component/popular/popular-list/popular-list.component';
-import { LoginComponent } from './component/login/login.component';
+import { LoginComponent } from './component/auth/login/login.component';
 import { AuthComponent } from './component/auth/auth.component';
 
 import { AuthInterceptor } from './interceptor/auth.interceptor';
@@ -25,19 +25,20 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from 'environments/environment';
+import { HomeComponent } from './component/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    // CollectionComponent,
     ProfileComponent,
     UploadComponent,
     PopularItemComponent,
     PopularListComponent,
     LoginComponent,
     AuthComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

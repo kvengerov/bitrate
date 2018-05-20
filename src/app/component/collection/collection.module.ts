@@ -1,17 +1,14 @@
 import {NgModule} from '@angular/core';
-import {CollectionComponent} from './collection.component';
-
-import { Routes, RouterModule} from '@angular/router';
-
-const lazyRoutes: Routes = [
-  {path: '', component: CollectionComponent }
-]
+import { CollectionWindowComponent } from './collection-window/collection-window.component';
+import {CommonModule} from '@angular/common';
+import {CollectionRoutingModule} from './collection-routing.module';
 
 @NgModule({
   imports: [
-    RouterModule.forChild(lazyRoutes)
+    CommonModule,
+    CollectionRoutingModule,
   ],
-  declarations: [ CollectionComponent ],
+  declarations: [ CollectionWindowComponent ],
 })
 
 export class CollectionModule {}

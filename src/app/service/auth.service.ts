@@ -11,12 +11,16 @@ export class AuthService {
     this.user = afAuth.authState;
   }
 
-  loginWithGoogle() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  loginWithGoogle(): Observable<any> {
+    return Observable.fromPromise(
+      this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    );
   }
 
-  loginWithFacebook() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+  loginWithFacebook(): Observable<any> {
+    return Observable.fromPromise(
+      this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
+    );
   }
 
   login(email, password): Observable<any> {
