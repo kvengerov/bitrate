@@ -7,8 +7,17 @@ import {Observable} from 'rxjs/Observable';
 export class AuthService {
 
   public user: Observable<firebase.User>;
+  private userDetails: any;
   constructor(private  afAuth: AngularFireAuth) {
     this.user = afAuth.authState;
+    this.user.subscribe(user => {
+      if (user) {
+        this.userDetails = user;
+        console.log(this.userDetails);
+      } else {
+        this.userDetails = null;
+      }
+    });
   }
 
   loginWithGoogle(): Observable<any> {
@@ -35,6 +44,13 @@ export class AuthService {
 
   logout() {
     this.afAuth.auth.signOut();
+  }
+
+  getUser() {
+    return {
+      name: this.userDetails.displayName,
+      email: this.userDetails.email
+    };
   }
 
 }

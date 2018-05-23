@@ -1,3 +1,4 @@
+import { ChatComponent } from './component/chat/chat.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -24,7 +25,7 @@ import { AuthService } from './service/auth.service';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { environment } from 'environments/environment';
+import { environment } from '../environments/environment';
 import { HomeComponent } from './component/home/home.component';
 
 
@@ -39,6 +40,7 @@ import { HomeComponent } from './component/home/home.component';
     LoginComponent,
     AuthComponent,
     HomeComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,7 @@ import { HomeComponent } from './component/home/home.component';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebase, 'bitrate'),
+    AngularFireModule.initializeApp(environment .firebase, 'bitrate'),
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],

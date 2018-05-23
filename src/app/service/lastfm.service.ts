@@ -14,12 +14,12 @@ export class LastfmService {
   constructor(private httpClient: HttpClient) {}
 
   getTopTracks()  {
-    return this.httpClient.get(`${this.rootUrl}?method=chart.gettoptracks&tag=disco&limit=8&format=json`,
+    return this.httpClient.get(`${this.rootUrl}?method=chart.gettoptracks&tag=disco&limit=20&format=json`,
       {
       observe: 'body',
       responseType: 'json'
       }
-    )
+    );
       // .map(res => JSON.stringify(res));
   }
 

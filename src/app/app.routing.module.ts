@@ -1,3 +1,4 @@
+import { ChatComponent } from './component/chat/chat.component';
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileComponent } from './component/profile/profile.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'upload', component: UploadComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'chat', component: ChatComponent },
   { path: ':provider/auth', component: AuthComponent },
 
 ];

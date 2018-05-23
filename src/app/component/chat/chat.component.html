@@ -1,0 +1,22 @@
+<div>
+  chat works!
+
+  <div *ngIf="authService.isLoggedIn()">
+    <button (click)="authService.logout()">LOGOUT</button>
+    <input [(ngModel)]="msg" placeholder="Type message"/>
+    <button (click)="sendMessage(msg)">SEND</button>
+  </div>
+
+  <div>
+    <h3>Messages</h3>
+    <div *ngFor="let message of items | async">
+      <div>
+        {{message.userName}} - {{message.timeStamp}} <button (click)="removeMessage(message)" style="background: red">DELETE</button>
+      </div>
+      <div style="width: 100%; border: 1px solid #c7c7c7;">
+        {{message.message}}
+      </div>
+    </div>
+  </div>
+
+</div>

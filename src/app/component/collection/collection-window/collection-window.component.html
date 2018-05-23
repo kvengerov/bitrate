@@ -1,3 +1,10 @@
-<p>
-  collection-window works!
-</p>
+<section class="chart-top-track">
+  <div class="container">
+    <div class="block">
+      <p><span>Chart Top Track</span></p>
+    </div>
+    <div class="row">
+      <app-collection-list class="col-3" *ngFor="let track of tracks" [track]="track"></app-collection-list>
+    </div>
+  </div>
+</section>

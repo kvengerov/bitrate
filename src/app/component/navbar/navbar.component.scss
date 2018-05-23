@@ -1,47 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.nav {
-  background: #232323;
-  height: 60px;
-  display: inline-block;
-}
-
-.nav li {
-  float: left;
-  list-style-type: none;
-  position: relative;
-}
-
-.nav li a {
-  font-size: 16px;
-  color: white;
-  display: block;
-  line-height: 60px;
-  padding: 0 26px;
-  text-decoration: none;
-  border-left: 1px solid #2e2e2e;
-  font-family: Montserrat, sans-serif;
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-}
-
-.nav li a:hover {
-  background-color: #2e2e2e;
-}
-
-#settings a {
-  padding: 18px;
-  height: 24px;
-  font-size: 10px;
-  line-height: 24px;
-}
-
 #search {
-  width: 357px;
   margin: 4px;
 }
 
@@ -60,21 +17,11 @@
   box-sizing: border-box;
   transition: all 0.15s;
 }
-::-webkit-input-placeholder {
-  color:white;
-}
-:-moz-placeholder {
-  color:white;
-}
-::-moz-placeholder {
-  color:white;
-}
-:-ms-input-placeholder {
-  color:white;
-}
+
 #search_text:focus{
   background: rgb(64, 151, 119);
 }
+
 #search_button{
   border: 0 none;
   background: #1f7f5c url(https://designmodo.com/demo/dropdown-menu-search/search.png) center no-repeat;
@@ -86,39 +33,18 @@
   cursor: pointer;
 }
 
-#options a{
-  border-left: 0 none;
+.fixedbut { 
+  position: fixed; 
+  bottom: 20px; 
+  right: 20px; 
+  display: block; 
+  background: #2db700; 
+  color: #fff; 
+  text-decoration: none; 
+  padding: 6px 23px; 
+  font-size: 17px;
 }
 
-#options>a {
-  background-image: url(https://designmodo.com/demo/dropdown-menu-search/triangle.png);
-  background-position: 85% center;
-  background-repeat: no-repeat;
-  padding-right: 42px;
-}
-
-.subnav {
-  visibility: hidden;
-  position: absolute;
-  top:110%;
-  right: 0;
-  width: 200px;
-  height: auto;
-  opacity: 0;
-  transition: all 0.1s;
-  background: #232323;
-}
-
-.subnav li {
-  float: none;
-}
-
-.subnav li a {
-  border-bottom: 1px solid #2e2e2e;
-}
-
-#options:hover .subnav{
-  visibility: visible;
-  top:100%;
-  opacity: 1;
+.fixedbut:hover { 
+  background: #222; 
 }

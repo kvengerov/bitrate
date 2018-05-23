@@ -1,52 +1,46 @@
-<ul class="nav">
-  <li>
-    <a [routerLink]="['/']">Home</a>
-  </li>
-  <li>
-    <a [routerLink]="['/collection']">Collection</a>
-  </li>
-  <li>
-    <a [routerLink]="['/upload']">Upload</a>
-  </li>
-  <li id="search">
-    <form action="" method="get">
-      <input type="text" name="search_text" id="search_text" placeholder="Search" />
-      <input type="button" name="search_button" id="search_button" />
-    </form>
-  </li>
-  <li>
-    <a [routerLink]="['/login']" *ngIf="!isLoggedIn">Sign In</a>
-  </li>
-  <li>
-    <a (click)="logout()" [routerLink]="['/login']" *ngIf="isLoggedIn">Logout</a>
-  </li>
-  <li>
-    <a [routerLink]="['/upload']" *ngIf="!isLoggedIn">Create account</a>
-  </li>
-  <li id="options">
-    <a href="#">Lang</a>
-    <ul class="subnav">
-      <li class="subnav">
-      <li><a href="#">En</a></li>
-      <li><a href="#">Ru</a></li>
-    </ul>
-  </li>
-</ul>
+<section>
+  <div class="container">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" [routerLink]="['/']">BitRATE</a>
+      <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+          aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/collection']">Collection</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/upload']">Upload</a>
+          </li>
+          <li id="search">
+            <form class="form-inline my-2 my-lg-0" action="" method="get">
+              <input class="form-control mr-sm-2" type="text" name="search_text" id="search_text" placeholder="Search" />
+              <input class="btn btn-outline-success my-2 my-sm-0" type="button" name="search_button" id="search_button" />
+            </form>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/login']" *ngIf="!isLoggedIn">SignIn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()" [routerLink]="['/']" *ngIf="isLoggedIn">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/signup']" *ngIf="!isLoggedIn">Create account</a>
+          </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+      </div>
+    </nav>
+  </div> 
+</section>
 
-<!--<nav class="navbar navbar-default">-->
-  <!--<div class="container-fluid">-->
-      <!--<div>-->
-        <!--<a [routerLink]="['/']" class="navbrand-brand">Bitrate</a>-->
-      <!--</div>-->
-      <!--<ul class="nav navbar-nav">-->
-        <!--<li><a [routerLink]="['/']">Home</a></li>-->
-        <!--<li><a [routerLink]="['/collection']">Collection</a></li>-->
-        <!--<li><a [routerLink]="['/upload']">Upload</a></li>-->
-      <!--</ul>-->
 
-      <!--<ul class="nav navbar-nav">-->
-        <!--<li *ngIf="!authenticated"><a (click)="login()">Login</a></li>-->
-        <!--<li *ngIf="authenticated"><a (click)="logout()">Logout</a></li>-->
-      <!--</ul>-->
-  <!--</div>-->
-<!--</nav>-->
+<a class="fixedbut" [routerLink]="['/chat']">Chat!</a>
