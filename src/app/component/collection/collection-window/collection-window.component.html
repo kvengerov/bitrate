@@ -4,7 +4,17 @@
       <p><span>Chart Top Track</span></p>
     </div>
     <div class="row">
-      <app-collection-list class="col-3" *ngFor="let track of tracks" [track]="track"></app-collection-list>
+      <div class="card col-3" *ngFor="let track of tracks">
+        <div class="card-block">
+          <img src="{{ track.image[2]['#text'] }}" alt="{{ track.artist.name }}" />
+          <div>
+            <ul>
+              <li><a href="{{ track.artist.url }}">{{ track.artist.name }}</a></li>
+              <li><a href="{{ track.url }}">{{ track.name }}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

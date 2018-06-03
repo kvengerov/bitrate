@@ -2,11 +2,16 @@
 // @import url(https://bootswatch.com/4/lux/bootstrap.min.css);
 // @import url(https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css);
 // @import url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap-grid.min.css);
+@font-face {
+  font-family: 'Gotham Pro';
+  src: local('assets/fonts/GothamPro.ttf');
+}
 
 body {
-  // margin: 0;
-  // padding: 0;
-  background: url("img/BG.svg") top left/cover no-repeat fixed;
+  background: url("assets/img/BG.svg") top left/cover no-repeat fixed;
+  min-height: 75rem;
+  margin-top: 100px;
+  font-family: 'Gotham Pro', sans-serif !important;
 }
 .card {
   margin-top: 20px;

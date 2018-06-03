@@ -1,50 +1,88 @@
-#search {
-  margin: 4px;
-}
+/*=======navigation=======*/
 
-#search_text {
-  width: 297px;
-  padding: 15px 0 15px 20px;
-  font-size: 16px;
-  font-family: Montserrat, sans-serif;
-  border: 0 none;
-  height: 52px;
-  margin-right: 0px;
-  color: white;
-  outline: none;
-  background: #1f7f5c;
-  float: left;
-  box-sizing: border-box;
-  transition: all 0.15s;
-}
-
-#search_text:focus{
-  background: rgb(64, 151, 119);
-}
-
-#search_button{
-  border: 0 none;
-  background: #1f7f5c url(https://designmodo.com/demo/dropdown-menu-search/search.png) center no-repeat;
-  width: 60px;
-  float: left;
-  padding: 0;
+.nav-right {
   text-align: center;
-  height: 52px;
-  cursor: pointer;
+}
+.first {
+  margin-left: 50px;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #FFFFFF;
+}
+.bg-dark {
+  background-color: #282828 !important;
+}
+.fixed-top {
+  /*left: 60px;*/
+  /*right: 60px;*/
+}
+.nav-item {
+  height: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.form-inline .form-control {
+  margin-left: 60px;
+  height: 40px;
+  width: 330px;
+  border-radius: 33px;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 8px 0 rgba(232,79,60,0.62);
 }
 
-.fixedbut { 
-  position: fixed; 
-  bottom: 20px; 
-  right: 20px; 
-  display: block; 
-  background: #2db700; 
-  color: #fff; 
-  text-decoration: none; 
-  padding: 6px 23px; 
+
+/*=======END navigation=======*/
+
+
+//#search {
+//  margin: 4px;
+//}
+//
+//#search_text {
+//  width: 297px;
+//  padding: 15px 0 15px 20px;
+//  font-size: 16px;
+//  font-family: Montserrat, sans-serif;
+//  border: 0 none;
+//  height: 52px;
+//  margin-right: 0px;
+//  color: white;
+//  outline: none;
+//  background: #1f7f5c;
+//  float: left;
+//  box-sizing: border-box;
+//  transition: all 0.15s;
+//}
+//
+//#search_text:focus{
+//  background: rgb(64, 151, 119);
+//}
+//
+//#search_button{
+//  border: 0 none;
+//  background: #1f7f5c url(https://designmodo.com/demo/dropdown-menu-search/search.png) center no-repeat;
+//  width: 60px;
+//  float: left;
+//  padding: 0;
+//  text-align: center;
+//  height: 52px;
+//  cursor: pointer;
+//}
+//
+.fixedbut {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: block;
+  background: #2db700;
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 23px;
   font-size: 17px;
+  z-index: 999;
 }
 
-.fixedbut:hover { 
-  background: #222; 
+.fixedbut:hover {
+  background: #222;
 }

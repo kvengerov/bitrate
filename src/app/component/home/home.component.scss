@@ -1,56 +1,193 @@
-.row {
+/*=======section top artist=======*/
+
+.albums {
+  margin-top: 50px;
+}
+.img-bloc {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
   display: flex;
-  align-items: stretch;
-  align-content: space-between;
-  justify-content: space-between;
-  flex-flow: row nowrap;
-  margin-left: 0;
-  margin-right: 0;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
 }
-
-.row-wrap {
-  flex-flow: row wrap;
+.img-bloc-content {
+  position: absolute;
+  bottom: 5px;
+  left: 15px;
+  box-sizing: border-box;
 }
-
-
-
-.card-one {
-  width: 50%;
-}
-
-.bit-1 {
-  height: 500px;
-}
-
-.card-four {
-  width: 50%;
-}
-
-.bit-2 {
-  width: 50%;
-  height: 250px;
-}
-
-.bit-3 {
-  width: 50%;
-  height: 200px;
-}
-
-/* Доп. стили для стилизации */
-.wrap {
-  padding: 1rem;
-  margin: 0 auto;
-}
-
-[class*="bit-"] {
-  padding: 15px;
-}
-
-.img {
-  background: deepskyblue;
-  height: 100%;
-}
-
-.card-line {
+.img-bloc img {
   width: 100%;
 }
+.box .main-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-left: 45px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+.main-artist {
+  height: 32px;
+  width: 272px;
+  color: #FFFFFF;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 34px;
+  padding-bottom: 30px;
+}
+.main-description {
+  height: 11px;
+  width: 289px;
+  color: #FFFFFF;
+  font-size: 13px;
+  line-height: 12px;
+  padding-bottom: 25px;
+}
+.btn-one {
+  height: 35px;
+  width: 140px;
+  border-radius: 20px;
+  background-color: #E84F3C;
+  box-shadow: 0 8px 18px 0 rgba(144,29,15,0.73);
+}
+.btn-two {
+  height: 35px;
+  width: 140px;
+  border: 1px solid #FFFFFF;
+  border-radius: 20px;
+}
+.artist {
+  height: 18px;
+  width: 151px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 19px;
+}
+.description {
+  height: 8px;
+  width: 39px;
+  color: #FFFFFF;
+  font-size: 11px;
+  line-height: 9px;
+}
+/*=======END section top artist=======*/
+
+/*=======section top=======*/
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  padding: 0;
+  display: inline-block;
+  padding-left: 10px;
+  color: #FFFFFF;
+}
+.img-bloc-top {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+  /*box-shadow: 0 5px 15px rgba(0, 0, 0, .5);*/
+  height: 207px;
+  width: 207px;
+  box-shadow: 0 4px 8px 0 rgba(20,19,24,0.64);
+}
+.img-bloc-top img {
+  width: 100%;
+}
+.img-bloc-content-top {
+  position: absolute;
+  bottom: 0;
+  color: #FFFFFF;
+  /*font-size: 10px;*/
+  font-weight: 500;
+  line-height: 10px;
+  height: 60px;
+  width: 100%;
+  opacity: 0.6;
+  background-color: #141318;
+}
+.artist-top {
+  height: 9px;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 5px;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+.description-top {
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 10px;
+  margin-left: 15px;
+}
+/*=======END section top=======*/
+
+
+
+
+//.row {
+//  display: flex;
+//  align-items: stretch;
+//  align-content: space-between;
+//  justify-content: space-between;
+//  flex-flow: row nowrap;
+//  margin-left: 0;
+//  margin-right: 0;
+//}
+//
+//.row-wrap {
+//  flex-flow: row wrap;
+//}
+//
+//
+//
+//.card-one {
+//  width: 50%;
+//}
+//
+//.bit-1 {
+//  height: 500px;
+//}
+//
+//.card-four {
+//  width: 50%;
+//}
+//
+//.bit-2 {
+//  width: 50%;
+//  height: 250px;
+//}
+//
+//.bit-3 {
+//  width: 50%;
+//  height: 200px;
+//}
+//
+///* Доп. стили для стилизации */
+//.wrap {
+//  padding: 1rem;
+//  margin: 0 auto;
+//}
+//
+//[class*="bit-"] {
+//  padding: 15px;
+//}
+//
+//.img {
+//  background: deepskyblue;
+//  height: 100%;
+//}
+//
+//.card-line {
+//  width: 100%;
+//}
