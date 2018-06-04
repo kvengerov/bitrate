@@ -27,7 +27,7 @@
               </form>
             </li>
             <li class="nav-item">
-              <a class="nav-link first" [routerLink]="['/login']" *ngIf="!isLoggedIn">Sign In</a>
+              <a class="nav-link first" data-toggle="modal" data-target="#login-modal" [routerLink]="['/login']" *ngIf="!isLoggedIn">Sign In</a>
             </li>
             <li class="nav-item">
               <a class="nav-link first" (click)="logout()" [routerLink]="['/']" *ngIf="isLoggedIn">Logout</a>

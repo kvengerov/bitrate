@@ -28,6 +28,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './component/home/home.component';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { HomeComponent } from './component/home/home.component';
     HttpClientModule,
     AngularFireModule.initializeApp(environment .firebase, 'bitrate'),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    NgbModule.forRoot()
   ],
   providers: [
     AuthService,
