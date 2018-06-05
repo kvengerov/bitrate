@@ -14,7 +14,6 @@ import { UploadComponent } from './component/upload/upload.component';
 import { PopularItemComponent } from './component/popular/popular-list/popular-item/popular-item.component';
 import { PopularListComponent } from './component/popular/popular-list/popular-list.component';
 import { LoginComponent } from './component/auth/login/login.component';
-import { AuthComponent } from './component/auth/auth.component';
 
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 
@@ -25,6 +24,8 @@ import { AuthService } from './service/auth.service';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule} from 'angularfire2/firestore';
+import { AngularFireStorageModule} from 'angularfire2/storage';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './component/home/home.component';
 
@@ -40,7 +41,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     PopularItemComponent,
     PopularListComponent,
     LoginComponent,
-    AuthComponent,
     HomeComponent,
     ChatComponent,
   ],
@@ -50,9 +50,11 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(environment .firebase, 'bitrate'),
+    AngularFireModule.initializeApp(environment .firebase,),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
     NgbModule.forRoot()
   ],
   providers: [
