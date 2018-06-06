@@ -19,14 +19,15 @@ export class AuthService {
 
   public user: Observable<User>;
   private userDetails: any;
-  constructor(private  afAuth: AngularFireAuth, private afs: AngularFirestore, private router: Router) {
-    this.user = this.afAuth.authState.switchMap(user => {
+  constructor(private  _afAuth: AngularFireAuth, private _afs: AngularFirestore, private _router: Router) {
+    this.user = this._afAuth.authState.switchMap(user => {
       if (user) {
-        return this.afs.doc<User>('user/${user.uid}').valueChanges();
+        return this._afs.doc<User>('user/${user.uid}').valueChanges();
       } else {
         return Observable.of(null);
       }
-    });// ---------------CONTINUE--------------
+    });
+    // ---------------CONTINUE--------------
     // this.user.subscribe(user => {
     //   if (user) {
     //     this.userDetails = user;
@@ -39,19 +40,19 @@ export class AuthService {
 
   loginWithGoogle(): Observable<any> {
     return Observable.fromPromise(
-      this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      this._afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
     );
   }
 
   loginWithFacebook(): Observable<any> {
     return Observable.fromPromise(
-      this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
+      this._afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
     );
   }
 
   login(email, password): Observable<any> {
     return Observable.fromPromise(
-      this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      this._afAuth.auth.signInWithEmailAndPassword(email, password)
     );
   }
 
@@ -60,7 +61,10 @@ export class AuthService {
   }
 
   logout() {
-    this.afAuth.auth.signOut();
+    return this._afAuth.auth.signOut()
+      .then(() => {
+        this._router.navigate(['/']);
+      });
   }
 
   getUser() {

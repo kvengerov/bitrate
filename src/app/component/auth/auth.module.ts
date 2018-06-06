@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+// import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { RegisterComponent } from './register/register.component';
@@ -14,9 +14,10 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    CommonModule,
+    // CommonModule,
     RouterModule.forChild(routes)
   ],
+  exports: [ RouterModule ],
   declarations: [LoginComponent, RegisterComponent, ResetPasswordComponent]
 })
 export class AuthModule { }

@@ -29,7 +29,11 @@ import { AngularFireStorageModule} from 'angularfire2/storage';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './component/home/home.component';
 
+
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {AuthGuard} from './component/auth/auth.guard';
+import {RegisterComponent} from './component/auth/register/register.component';
+import {ResetPasswordComponent} from './component/auth/reset-password/reset-password.component';
 
 
 @NgModule({
@@ -43,6 +47,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     HomeComponent,
     ChatComponent,
+    RegisterComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +56,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(environment .firebase,),
+    AngularFireModule.initializeApp(environment .firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
@@ -59,6 +65,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   ],
   providers: [
     AuthService,
+    AuthGuard,
     LastfmService,
     TokenService,
     {

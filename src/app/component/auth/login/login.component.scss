@@ -181,7 +181,7 @@
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   background-color: #351ae8;
 }
-.login-container a {
+.login-container .login-help {
   text-decoration: none;
   color: #666666;
   font-weight: 400;
@@ -190,6 +190,7 @@
   opacity: 0.6;
   transition: opacity ease 0.5s;
 }
+
 .login-help {
   font-size: 12px;
 }
@@ -198,84 +199,134 @@
 
 
 
-.button {
-  display: inline-block;
-  border: none;
-  color: #fff;
+//.button {
+//  display: inline-block;
+//  border: none;
+//  color: #fff;
+//  text-decoration: none;
+//  background-color: #3b5998;
+//  padding: 16px 45px;
+//  font-size: 13px;
+//  text-transform: uppercase;
+//  font-weight: 600;
+//  letter-spacing: 3px;
+//  border-radius: 2px;
+//  text-align: center;
+//  position: relative;
+//  outline: none;
+//  transition: background-color .1s ease;
+//  &::after {
+//    transition: background-color .2s ease;
+//    position: absolute;
+//    content: '';
+//    height: 4px;
+//    bottom: 0;
+//    width: 100%;
+//    background-color: darken(#3b5998, 50%);
+//    opacity: .18;
+//    border-bottom-left-radius: 2px;
+//    border-bottom-right-radius: 2px;
+//    left: 0;
+//  }
+//  &:focus, &:hover {
+//    text-decoration: none;
+//    color: #fff;
+//    cursor: pointer;
+//  }
+//  &:hover {
+//    background-color: lighten(#3b5998, 5%);
+//    &::after {
+//      opacity: .22;
+//    }
+//  }
+//  &:active {
+//    background-color: darken(#3b5998, 5%);
+//    &::after {
+//      opacity: .32;
+//    }
+//  }
+//  &.button-white{
+//    background-color: #fff;
+//    color: #444;
+//    &::after{
+//      background-color: rgba(#000, .6);
+//    }
+//    &:hover{
+//      &::after{
+//        background-color: rgba(#000, .2);
+//      }
+//    }
+//    &:active{
+//      &::after{
+//        background-color: rgba(#000, .4);
+//      }
+//    }
+//  }
+//  &.button-dark {
+//    background-color: #4d4d4d;
+//    color: #fff;
+//    &::after {
+//      background-color: #3b5998;
+//      opacity: 1
+//    }
+//    &:hover {
+//      background-color: lighten(#4d4d4d, 5);
+//    }
+//    &:active {
+//      &::after {
+//        background-color: rgba(#3b5998, .2);
+//      }
+//      background-color: darken(#4d4d4d, 2);
+//    }
+//  }
+//}
+a:not([href]):not([tabindex]) {
+  color: #FFFFFF;
   text-decoration: none;
-  background-color: #3b5998;
-  padding: 16px 45px;
-  font-size: 13px;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 3px;
-  border-radius: 2px;
-  text-align: center;
-  position: relative;
-  outline: none;
-  transition: background-color .1s ease;
-  &::after {
-    transition: background-color .2s ease;
-    position: absolute;
-    content: '';
-    height: 4px;
-    bottom: 0;
-    width: 100%;
-    background-color: darken(#3b5998, 50%);
-    opacity: .18;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
-    left: 0;
-  }
-  &:focus, &:hover {
-    text-decoration: none;
-    color: #fff;
-    cursor: pointer;
-  }
-  &:hover {
-    background-color: lighten(#3b5998, 5%);
-    &::after {
-      opacity: .22;
-    }
-  }
-  &:active {
-    background-color: darken(#3b5998, 5%);
-    &::after {
-      opacity: .32;
-    }
-  }
-  &.button-white{
-    background-color: #fff;
-    color: #444;
-    &::after{
-      background-color: rgba(#000, .6);
-    }
-    &:hover{
-      &::after{
-        background-color: rgba(#000, .2);
-      }
-    }
-    &:active{
-      &::after{
-        background-color: rgba(#000, .4);
-      }
-    }
-  }
-  &.button-dark {
-    background-color: #4d4d4d;
-    color: #fff;
-    &::after {
-      background-color: #3b5998;
-      opacity: 1
-    }
-    &:hover {
-      background-color: lighten(#4d4d4d, 5);
-    }
-    &:active {
-      &::after {
-        background-color: rgba(#3b5998, .2);
-      }
-      background-color: darken(#4d4d4d, 2);
-    }
-  }
 }
+li {
+  list-style: none;
+}
+
+.button-social {
+  height: 40px;
+  width: 290px;
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 17px;
+  padding: 12px 20px 12px 61px;
+  position: relative;
+  left: -40px;
+  cursor: pointer;
+}
+
+.button-google {
+  background-color: #f4362a;
+  top: 0px;
+}
+.button-facebook {
+  background-color: #2D4B91;
+  top: -15px;
+}
+.fa {
+  position: absolute;
+  color: #ffffff;
+  z-index: 1;
+  cursor: pointer;
+}
+.fa-facebook {
+  top: 186px;
+  font-size: 30px;
+  left: 502px;
+}
+.fa-google {
+  top: 240px;
+  left: 500px;
+  font-size: 30px;
+}
+.text-or {
+  text-align: center;
+}
+
+
