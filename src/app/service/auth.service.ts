@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
-import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
-import { Router } from '@angular/router';
+import * as firebase from 'firebase/app';
 import 'rxjs/add/operator/switchMap';
+import { error } from 'util';
 
 interface User {
   uid: string;
@@ -16,10 +17,14 @@ interface User {
 
 @Injectable()
 export class AuthService {
-
   public user: Observable<User>;
   private userDetails: any;
-  constructor(private  _afAuth: AngularFireAuth, private _afs: AngularFirestore, private _router: Router) {
+
+  constructor(
+    private _afAuth: AngularFireAuth,
+    private _afs: AngularFirestore,
+    private _router: Router
+  ) {
     this.user = this._afAuth.authState.switchMap(user => {
       if (user) {
         return this._afs.doc<User>('user/${user.uid}').valueChanges();
@@ -27,7 +32,6 @@ export class AuthService {
         return Observable.of(null);
       }
     });
-    // ---------------CONTINUE--------------
     // this.user.subscribe(user => {
     //   if (user) {
     //     this.userDetails = user;
@@ -50,9 +54,17 @@ export class AuthService {
     );
   }
 
+  // login(email: string, password: string){
+  //   return this._afAuth.auth.signInWithEmailAndPassword(email, password)
+  //     .then(() => console.log('You have succesfully logged in'))
+  //     .catch(error => console.log(error.message));
+  // }
+
   login(email, password): Observable<any> {
     return Observable.fromPromise(
       this._afAuth.auth.signInWithEmailAndPassword(email, password)
+        .then(() => console.log('You have succesfully logged in'))
+        .catch(error => console.log(error.message))
     );
   }
 

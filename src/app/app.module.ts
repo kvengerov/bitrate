@@ -1,10 +1,15 @@
-import { ChatComponent } from './component/chat/chat.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { environment } from '../environments/environment';
+
+import { AngularFireModule } from 'angularfire2';
+
+import { CoreModule} from './core/core.module';
+import { AppRoutingModule } from './app.routing.module';
 
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app.routing.module';
+import { AuthInterceptor } from './interceptor/auth.interceptor';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
@@ -13,27 +18,20 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { UploadComponent } from './component/upload/upload.component';
 import { PopularItemComponent } from './component/popular/popular-list/popular-item/popular-item.component';
 import { PopularListComponent } from './component/popular/popular-list/popular-list.component';
-import { LoginComponent } from './component/auth/login/login.component';
-
-import { AuthInterceptor } from './interceptor/auth.interceptor';
+import { ChatComponent } from './component/chat/chat.component';
+import { HomeComponent } from './component/home/home.component';
 
 import { LastfmService } from './service/lastfm.service';
 import { TokenService } from './service/token.service';
 import { AuthService } from './service/auth.service';
 
-import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFirestoreModule} from 'angularfire2/firestore';
-import { AngularFireStorageModule} from 'angularfire2/storage';
-import { environment } from '../environments/environment';
-import { HomeComponent } from './component/home/home.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AuthGuard } from './component/auth/auth.guard';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {AuthGuard} from './component/auth/auth.guard';
-import {RegisterComponent} from './component/auth/register/register.component';
-import {ResetPasswordComponent} from './component/auth/reset-password/reset-password.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -44,27 +42,22 @@ import {ResetPasswordComponent} from './component/auth/reset-password/reset-pass
     UploadComponent,
     PopularItemComponent,
     PopularListComponent,
-    LoginComponent,
     HomeComponent,
     ChatComponent,
-    RegisterComponent,
-    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    CoreModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(environment .firebase),
+
     AngularFireDatabaseModule,
-    AngularFireAuthModule,
-    AngularFirestoreModule,
-    AngularFireStorageModule,
     NgbModule.forRoot()
   ],
   providers: [
-    AuthService,
+    // AuthService,
     AuthGuard,
     LastfmService,
     TokenService,

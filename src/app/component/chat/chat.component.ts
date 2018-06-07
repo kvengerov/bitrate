@@ -1,7 +1,8 @@
-import { AuthService } from './../../service/auth.service';
 import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
+import { AuthService } from '../../service/auth.service';
+import { SharedModule } from '../../shared/shared.module';
 
 @Component({
   selector: 'app-chat',
