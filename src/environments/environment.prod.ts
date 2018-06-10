@@ -8,12 +8,12 @@ export const environment = {
     storageBucket: 'bitrate-30a57.appspot.com',
     messagingSenderId: '685923677726'
   },
-  firechat: {
-    apiKey: 'AIzaSyCdF1bLT4nTe8chdcFPN42M5BsaoTKh9wE',
-    authDomain: 'agilie-it-school-chat.firebaseapp.com',
-    databaseURL: 'https://agilie-it-school-chat.firebaseio.com',
-    projectId: 'agilie-it-school-chat',
-    storageBucket: 'agilie-it-school-chat.appspot.com',
-    messagingSenderId: '980324210351'
-  }
+  // firechat: {
+  //   apiKey: 'AIzaSyCdF1bLT4nTe8chdcFPN42M5BsaoTKh9wE',
+  //   authDomain: 'agilie-it-school-chat.firebaseapp.com',
+  //   databaseURL: 'https://agilie-it-school-chat.firebaseio.com',
+  //   projectId: 'agilie-it-school-chat',
+  //   storageBucket: 'agilie-it-school-chat.appspot.com',
+  //   messagingSenderId: '980324210351'
+  // }
 };

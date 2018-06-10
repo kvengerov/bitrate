@@ -11,10 +11,10 @@ export interface Track {
 export class LastfmService {
   private rootUrl = 'http://ws.audioscrobbler.com/2.0/';
 
-  constructor(private _httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   getTopTracks()  {
-    return this._httpClient.get(`${this.rootUrl}?method=chart.gettoptracks&tag=disco&limit=20&format=json`,
+    return this.httpClient.get(`${this.rootUrl}?method=chart.gettoptracks&tag=disco&limit=20&format=json`,
       {
       observe: 'body',
       responseType: 'json'
@@ -25,7 +25,7 @@ export class LastfmService {
 
 
   getTopArtists() {
-    return this._httpClient.get(`${this.rootUrl}?method=tag.gettopartists&tag=disco&limit=10&format=json`)
+    return this.httpClient.get(`${this.rootUrl}?method=tag.gettopartists&tag=disco&limit=10&format=json`)
       .map(res => JSON.stringify(res));
   }
 

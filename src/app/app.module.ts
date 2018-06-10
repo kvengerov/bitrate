@@ -13,8 +13,6 @@ import { AuthInterceptor } from './interceptor/auth.interceptor';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
-
-import { ProfileComponent } from './component/profile/profile.component';
 import { UploadComponent } from './component/upload/upload.component';
 import { PopularItemComponent } from './component/popular/popular-list/popular-item/popular-item.component';
 import { PopularListComponent } from './component/popular/popular-list/popular-list.component';
@@ -23,14 +21,12 @@ import { HomeComponent } from './component/home/home.component';
 
 import { LastfmService } from './service/lastfm.service';
 import { TokenService } from './service/token.service';
-import { AuthService } from './service/auth.service';
 
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AuthGuard } from './component/auth/auth.guard';
+import { AuthGuard } from './service/auth.guard';
 
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -38,7 +34,6 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     NavbarComponent,
-    ProfileComponent,
     UploadComponent,
     PopularItemComponent,
     PopularListComponent,
@@ -57,7 +52,6 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     NgbModule.forRoot()
   ],
   providers: [
-    // AuthService,
     AuthGuard,
     LastfmService,
     TokenService,

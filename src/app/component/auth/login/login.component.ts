@@ -17,14 +17,14 @@ export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
   public hide = true;
-  public user$ = this._auth.user;
+  public user$ = this.auth.user;
 
   constructor(
-    private _fB: FormBuilder,
-    private _auth: AuthService,
-    private _router: Router
+    private fB: FormBuilder,
+    private auth: AuthService,
+    private router: Router
   ) {
-    this.loginForm = this._fB.group({
+    this.loginForm = this.fB.group({
       email: ['', [Validators.email, Validators.required]],
       password: ['',
         [
@@ -46,31 +46,23 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    return this._auth.login(this.email.value, this.password.value)
-      // .then(user => {
-      //   if(this.loginForm.valid) [
-      //     this._router.navigate(['/'])
-      //   ]
-      // });
+    return this.auth.login(this.email.value, this.password.value)
       .subscribe(
-        success => this._router.navigate(['/']),
+        success => this.router.navigate(['/']),
         error => alert(error)
       );
   }
-
-
   loginWithGoogle() {
-    this._auth.loginWithGoogle()
+    this.auth.loginWithGoogle()
       .subscribe(
-        success => this._router.navigate(['/']),
+        success => this.router.navigate(['/']),
         error => alert(error)
       );
   }
-
   loginWithFacebook() {
-    this._auth.loginWithFacebook()
+    this.auth.loginWithFacebook()
       .subscribe(
-        success => this._router.navigate(['/']),
+        success => this.router.navigate(['/']),
         error => alert(error)
       );
   }

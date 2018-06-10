@@ -5,7 +5,8 @@ import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firesto
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
 import 'rxjs/add/operator/switchMap';
-import { error } from 'util';
+import { Md5 } from 'ts-md5/dist/md5';
+
 
 interface User {
   uid: string;
@@ -14,20 +15,19 @@ interface User {
   displayName?: string;
 }
 
-
 @Injectable()
 export class AuthService {
   public user: Observable<User>;
   private userDetails: any;
 
   constructor(
-    private _afAuth: AngularFireAuth,
-    private _afs: AngularFirestore,
-    private _router: Router
+    private afAuth: AngularFireAuth,
+    private afs: AngularFirestore,
+    private router: Router
   ) {
-    this.user = this._afAuth.authState.switchMap(user => {
+    this.user = this.afAuth.authState.switchMap(user => {
       if (user) {
-        return this._afs.doc<User>('user/${user.uid}').valueChanges();
+        return this.afs.doc<User>(`user/${user.uid}`).valueChanges();
       } else {
         return Observable.of(null);
       }
@@ -41,44 +41,61 @@ export class AuthService {
     //   }
     // });
   }
-
   loginWithGoogle(): Observable<any> {
     return Observable.fromPromise(
-      this._afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
     );
   }
-
   loginWithFacebook(): Observable<any> {
     return Observable.fromPromise(
-      this._afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
+      this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
     );
   }
-
-  // login(email: string, password: string){
-  //   return this._afAuth.auth.signInWithEmailAndPassword(email, password)
-  //     .then(() => console.log('You have succesfully logged in'))
-  //     .catch(error => console.log(error.message));
-  // }
-
   login(email, password): Observable<any> {
     return Observable.fromPromise(
-      this._afAuth.auth.signInWithEmailAndPassword(email, password)
-        .then(() => console.log('You have succesfully logged in'))
+      this.afAuth.auth.signInWithEmailAndPassword(email, password)
+        .then(() => console.log(`You have succesfully logged in`))
         .catch(error => console.log(error.message))
     );
   }
-
+  register(email, password): Observable<any> {
+    return Observable.fromPromise(
+      this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+        .then(user => this.updateUserData(user))
+        .then(() => console.log(`Your account has been created`))
+        .then(user => {this.afAuth.auth.currentUser.sendEmailVerification()
+          .then(() => console.log(`We sent you an email verification`))
+          .catch(error => console.log(error.message));
+        })
+        .catch(error => console.log(error.message))
+    );
+  }
+  resetPassword(email): Observable<any> {
+    return Observable.fromPromise(
+      firebase.auth().sendPasswordResetEmail(email)
+        .then(() => console.log(`We sent you a reset password verification`))
+        .catch(error => console.log(error.message))
+    );
+  }
+  private updateUserData(user) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`user/${user.uid}`);
+    const data: User = {
+      uid: user.uid,
+      email: user.email || null,
+      displayName: user.displayName,
+      photoURL: user.photoURL || `http://www.gravatar.com/avatar/` + Md5.hashStr(user.uid) + `?d=identicon`,
+    };
+    return userRef.set(data, {merge: true});
+  }
   isAuthentificates(): Observable<boolean> {
     return this.user.map(user => user && user.uid !== undefined);
   }
-
   logout() {
-    return this._afAuth.auth.signOut()
+    return this.afAuth.auth.signOut()
       .then(() => {
-        this._router.navigate(['/']);
+        this.router.navigate([`/`]);
       });
   }
-
   getUser() {
     return {
       name: this.userDetails.displayName,

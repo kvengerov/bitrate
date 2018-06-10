@@ -3,10 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CollectionWindowComponent } from './collection-window/collection-window.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: CollectionWindowComponent
-  }
+  { path: '', component: CollectionWindowComponent }
 ];
 
 @NgModule({
