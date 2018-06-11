@@ -39,11 +39,10 @@ export class ChatComponent implements OnInit {
       return;
     }
     this.chatService.addMessage(this.message)
-      .then(() => this.message = ``)
+      .then(() => this.message = '')
       .then(() => console.log(`Message has been sent`))
       .catch((error) => console.error(`Error sent message`, error));
   }
-
 }
 
 

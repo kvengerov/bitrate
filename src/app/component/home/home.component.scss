@@ -78,6 +78,10 @@
 /*=======END section top artist=======*/
 
 /*=======section top=======*/
+.col-3 {
+  max-width: 220px;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -129,6 +133,10 @@ li {
   font-size: 16px;
   line-height: 10px;
   margin-left: 15px;
+}
+a {
+  color: #fff;
+  text-decoration: none;
 }
 /*=======END section top=======*/
 

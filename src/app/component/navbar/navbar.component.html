@@ -41,7 +41,7 @@
               <!--</div>-->
             <!--</li>-->
 
-            <li class="nav-item" >
+            <li class="nav-item" *ngIf="user">
               <div *ngIf="isLoggedIn" routerLink="/me">
                 <ul>
                   <li><img class="avatar" [src]="user.photoURL || '//:0'" alt="{{user.displayName}}"></li>

@@ -1,58 +1,60 @@
 <!--=======section top artist=======-->
 <section>
   <div class="container albums">
+    <h1>Top Artists</h1>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6" *ngFor="let artist of artists">
         <div class="box">
           <div class="img-bloc">
-            <img src="../../../assets/img/img-1.jpg" alt="">
+            <img src="{{ artist.image[4]['#text'] }}" alt="{{ artist.name }}" >
           </div>
           <div class="main-content">
-            <h3 class="main-artist">Блок 1</h3>
-            <p class="main-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <a href="" class="btn btn-default btn-one">More</a>
-            <a href="" class="btn btn-default btn-two">More</a>
+            <h3 class="main-artist">{{ artist.name }}</h3>
+            <p class="main-description"></p>
+            <a href="{{ artist.url }}" class="btn btn-default btn-one">More</a>
+            <!--<a href="" class="btn btn-default btn-two">More</a>-->
           </div>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="box">
-          <div class="img-bloc">
-            <img src="../../../assets/img/img-2.jpg" alt="">
-            <div class="img-bloc-content">
-              <h3 class="artist">Блок 2</h3>
-              <p class="description">ng elit.</p>
-            </div>
-          </div>
-        </div>
-        <div class="box">
-          <div class="img-bloc">
-            <img src="../../../assets/img/img-4.jpg" alt="">
-            <div class="img-bloc-content">
-              <h3 class="artist">Блок 4</h3>
-              <p class="description">Lorem</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="box">
-          <div class="img-bloc">
-            <img src="../../../assets/img/img-3.jpg" alt="">
-            <div class="img-bloc-content">
-              <h3 class="artist">Блок 3</h3>
-              <p class="description">Lorem</p>
-            </div>
-          </div>
-          <div class="img-bloc">
-            <img src="../../../assets/img/img-5.jpg" alt="">
-            <div class="img-bloc-content">
-              <h3 class="artist">Блок 5</h3>
-              <p class="description">Lorem</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!--<div class="col-md-3" *ngFor="let artist of artistsO">-->
+
+        <!--<div class="box">-->
+          <!--<div class="img-bloc">-->
+            <!--<img src="{{ artist.image[4]['#text'] }}" alt="{{ artist.name }}" >-->
+            <!--<div class="img-bloc-content">-->
+              <!--<h3 class="artist">Блок 2</h3>-->
+              <!--<p class="description">ng elit.</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="box">-->
+          <!--<div class="img-bloc">-->
+            <!--<img src="../../../assets/img/img-4.jpg" alt="">-->
+            <!--<div class="img-bloc-content">-->
+              <!--<h3 class="artist">Блок 4</h3>-->
+              <!--<p class="description">Lorem</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-md-3">-->
+        <!--<div class="box">-->
+          <!--<div class="img-bloc">-->
+            <!--<img src="../../../assets/img/img-3.jpg" alt="">-->
+            <!--<div class="img-bloc-content">-->
+              <!--<h3 class="artist">Блок 3</h3>-->
+              <!--<p class="description">Lorem</p>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="img-bloc">-->
+            <!--<img src="../../../assets/img/img-5.jpg" alt="">-->
+            <!--<div class="img-bloc-content">-->
+              <!--<h3 class="artist">Блок 5</h3>-->
+              <!--<p class="description">Lorem</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
     </div>
   </div>
 </section>
@@ -61,51 +63,16 @@
 <!--=======section top=======-->
 <section>
   <div class="container albums">
+    <h1>Top Tracks</h1>
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-3" *ngFor="let track of tracks">
         <ul>
           <li>
             <div class="img-bloc-top">
-              <img src="../../../assets/img/img-1.jpg" alt="">
+              <img src="{{ track.image[2]['#text'] }}" alt="{{ track.artist.name }}" >
               <div class="img-bloc-content-top">
-                <h3 class="artist-top">Блок 3</h3>
-                <p class="description-top">Lorem</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="img-bloc-top">
-              <img src="../../../assets/img/img-1.jpg" alt="">
-              <div class="img-bloc-content-top">
-                <h3 class="artist-top">Блок 3</h3>
-                <p class="description-top">Lorem</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="img-bloc-top">
-              <img src="../../../assets/img/img-1.jpg" alt="">
-              <div class="img-bloc-content-top">
-                <h3 class="artist-top">Блок 3</h3>
-                <p class="description-top">Lorem</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="img-bloc-top">
-              <img src="../../../assets/img/img-1.jpg" alt="">
-              <div class="img-bloc-content-top">
-                <h3 class="artist-top">Блок 3</h3>
-                <p class="description-top">Lorem</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="img-bloc-top">
-              <img src="../../../assets/img/img-1.jpg" alt="">
-              <div class="img-bloc-content-top">
-                <h3 class="artist-top">Блок 3</h3>
-                <p class="description-top">Lorem</p>
+                <h3 class="artist-top"><a href="{{ track.artist.url }}">{{ track.artist.name }}</a></h3>
+                <p class="description-top"><a href="{{ track.url }}">{{ track.name }}</a></p>
               </div>
             </div>
           </li>
@@ -117,135 +84,59 @@
 <!--=======END section top=======-->
 
 <!--=======section top=======-->
-<section>
-  <div class="container albums">
-    <div class="row">
-      <div class="col-md-12">
-        <ul>
-          <li>
-            <div class="img-bloc-top">
-              <img src="../../../assets/img/img-4.jpg" alt="">
-              <div class="img-bloc-content-top">
-                <h3 class="artist-top">Блок 3</h3>
-                <p class="description-top">Lorem</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="img-bloc-top">
-              <img src="../../../assets/img/img-4.jpg" alt="">
-              <div class="img-bloc-content-top">
-                <h3 class="artist-top">Блок 3</h3>
-                <p class="description-top">Lorem</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="img-bloc-top">
-              <img src="../../../assets/img/img-4.jpg" alt="">
-              <div class="img-bloc-content-top">
-                <h3 class="artist-top">Блок 3</h3>
-                <p class="description-top">Lorem</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="img-bloc-top">
-              <img src="../../../assets/img/img-4.jpg" alt="">
-              <div class="img-bloc-content-top">
-                <h3 class="artist-top">Блок 3</h3>
-                <p class="description-top">Lorem</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="img-bloc-top">
-              <img src="../../../assets/img/img-4.jpg" alt="">
-              <div class="img-bloc-content-top">
-                <h3 class="artist-top">Блок 3</h3>
-                <p class="description-top">Lorem</p>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+<!--<section>-->
+  <!--<div class="container albums">-->
+    <!--<div class="row">-->
+      <!--<div class="col-md-12">-->
+        <!--<ul>-->
+          <!--<li>-->
+            <!--<div class="img-bloc-top">-->
+              <!--<img src="../../../assets/img/img-4.jpg" alt="">-->
+              <!--<div class="img-bloc-content-top">-->
+                <!--<h3 class="artist-top">Блок 3</h3>-->
+                <!--<p class="description-top">Lorem</p>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="img-bloc-top">-->
+              <!--<img src="../../../assets/img/img-4.jpg" alt="">-->
+              <!--<div class="img-bloc-content-top">-->
+                <!--<h3 class="artist-top">Блок 3</h3>-->
+                <!--<p class="description-top">Lorem</p>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="img-bloc-top">-->
+              <!--<img src="../../../assets/img/img-4.jpg" alt="">-->
+              <!--<div class="img-bloc-content-top">-->
+                <!--<h3 class="artist-top">Блок 3</h3>-->
+                <!--<p class="description-top">Lorem</p>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="img-bloc-top">-->
+              <!--<img src="../../../assets/img/img-4.jpg" alt="">-->
+              <!--<div class="img-bloc-content-top">-->
+                <!--<h3 class="artist-top">Блок 3</h3>-->
+                <!--<p class="description-top">Lorem</p>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="img-bloc-top">-->
+              <!--<img src="../../../assets/img/img-4.jpg" alt="">-->
+              <!--<div class="img-bloc-content-top">-->
+                <!--<h3 class="artist-top">Блок 3</h3>-->
+                <!--<p class="description-top">Lorem</p>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</li>-->
+        <!--</ul>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</section>-->
 <!--=======END section top=======-->
-
-
-
-<!--<div class="container">-->
-  <!--<div class="wrap">-->
-    <!--<div class="row">-->
-      <!--<div class="card-one">-->
-        <!--<div class="bit-1">-->
-          <!--<div class="img">1</div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="card-four row row-wrap">-->
-        <!--<div class="bit-2">-->
-          <!--<div class="img">2</div>-->
-        <!--</div>-->
-        <!--<div class="bit-2">-->
-          <!--<div class="img">3</div>-->
-        <!--</div>-->
-        <!--<div class="bit-2">-->
-          <!--<div class="img">4</div>-->
-        <!--</div>-->
-        <!--<div class="bit-2">-->
-          <!--<div class="img">5</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-
-<!--<div class="container">-->
-  <!--<div class="wrap">-->
-    <!--<div class="row">-->
-      <!--<div class="card-line row">-->
-        <!--<div class="bit-3">-->
-          <!--<div class="img">2</div>-->
-        <!--</div>-->
-        <!--<div class="bit-3">-->
-          <!--<div class="img">3</div>-->
-        <!--</div>-->
-        <!--<div class="bit-3">-->
-          <!--<div class="img">4</div>-->
-        <!--</div>-->
-        <!--<div class="bit-3">-->
-          <!--<div class="img">5</div>-->
-        <!--</div>-->
-        <!--<div class="bit-3">-->
-          <!--<div class="img">5</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-
-<!--<div class="container">-->
-  <!--<div class="wrap">-->
-    <!--<div class="row">-->
-      <!--<div class="card-line row">-->
-        <!--<div class="bit-3">-->
-          <!--<div class="img">2</div>-->
-        <!--</div>-->
-        <!--<div class="bit-3">-->
-          <!--<div class="img">3</div>-->
-        <!--</div>-->
-        <!--<div class="bit-3">-->
-          <!--<div class="img">4</div>-->
-        <!--</div>-->
-        <!--<div class="bit-3">-->
-          <!--<div class="img">5</div>-->
-        <!--</div>-->
-        <!--<div class="bit-3">-->
-          <!--<div class="img">5</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
