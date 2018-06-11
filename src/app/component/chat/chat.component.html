@@ -1,22 +1,40 @@
-<div>
-  chat works!
+<div class="container main-container">
+  <div class="chat-window">
 
-  <!--<div *ngIf="authService.isLoggedIn()">-->
-    <!--<button (click)="authService.logout()">LOGOUT</button>-->
-    <!--<input [(ngModel)]="msg" placeholder="Type message"/>-->
-    <!--<button (click)="sendMessage(msg)">SEND</button>-->
-  <!--</div>-->
+    <h1>Chat</h1>
+    <hr>
+    <div class="app-message" id="app-message">
 
-  <!--<div>-->
-    <!--<h3>Messages</h3>-->
-    <!--<div *ngFor="let message of items | async">-->
-      <!--<div>-->
-        <!--{{message.userName}} - {{message.timeStamp}} <button (click)="removeMessage(message)" style="background: red">DELETE</button>-->
-      <!--</div>-->
-      <!--<div style="width: 100%; border: 1px solid #c7c7c7;">-->
-        <!--{{message.message}}-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
+      <div class="text-right">
+        <span class="badge badge-primary">Name</span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
 
+      <div>
+        <span class="badge badge-success">Name</span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+
+    </div>
+
+    <input type="text" name="message" [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="Enter message">
+
+  </div>
 </div>
+<!--<div *ngIf="authService.isLoggedIn()">-->
+<!--<button (click)="authService.logout()">LOGOUT</button>-->
+<!--<input [(ngModel)]="msg" placeholder="Type message"/>-->
+<!--<button (click)="sendMessage(msg)">SEND</button>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--<h3>Messages</h3>-->
+<!--<div *ngFor="let message of items | async">-->
+<!--<div>-->
+<!--{{message.userName}} - {{message.timeStamp}} <button (click)="removeMessage(message)" style="background: red">DELETE</button>-->
+<!--</div>-->
+<!--<div style="width: 100%; border: 1px solid #c7c7c7;">-->
+<!--{{message.message}}-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->

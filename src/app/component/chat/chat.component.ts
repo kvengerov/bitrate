@@ -13,7 +13,7 @@ export class ChatComponent implements OnInit {
 
   itemsRef: AngularFireList<any>;
   items: Observable<any[]>;
-  msg: '';
+  message: '';
 
   constructor(public authService: AuthService, private afDb: AngularFireDatabase) { }
 
@@ -25,26 +25,27 @@ export class ChatComponent implements OnInit {
   }
 
   sendMessage(msg: string) {
-    const user = this.authService.getUser();
-    this.itemsRef = this.getMessages();
-    this.itemsRef.push({
-      timeStamp: this.getTimeStamp(),
-      message: msg,
-      userName: user.name,
-      email: user.email
-    });
-    this.msg = '';
+    console.log(this.message);
+    // const user = this.authService.getUser();
+    // this.itemsRef = this.getMessages();
+    // this.itemsRef.push({
+    //   timeStamp: this.getTimeStamp(),
+    //   message: msg,
+    //   userName: user.name,
+    //   email: user.email
+    // });
+    this.message = '';
   }
   removeMessage(message) {
     this.itemsRef = this.getMessages();
     this.itemsRef.remove(message);
   }
-  getTimeStamp() {
-    const now = new Date();
-    let date, time;
-    date = now.getUTCFullYear() + '/' + now.getUTCMonth() + '/' + now.getUTCDate();
-    time = now.getUTCHours() + ':' + now.getUTCMinutes() + ':' + now.getUTCSeconds();
-    return date + ' ' + time;
-  }
+  // getTimeStamp() {
+  //   const now = new Date();
+  //   let date, time;
+  //   date = now.getUTCFullYear() + '/' + now.getUTCMonth() + '/' + now.getUTCDate();
+  //   time = now.getUTCHours() + ':' + now.getUTCMinutes() + ':' + now.getUTCSeconds();
+  //   return date + ' ' + time;
+  // }
 
 }

@@ -25,6 +25,7 @@ import { TokenService } from './service/token.service';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthGuard } from './service/auth.guard';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -46,7 +47,7 @@ import { AuthGuard } from './service/auth.guard';
     CoreModule,
     AppRoutingModule,
     HttpClientModule,
-
+    FormsModule,
     AngularFireDatabaseModule,
     NgbModule.forRoot()
   ],
