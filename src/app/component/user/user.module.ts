@@ -11,7 +11,7 @@ import { UserListItemComponent } from './user-list-item/user-list-item.component
 const routes: Routes = [
   { path: `me`, component: UserDasboardComponent },
   { path: `users`, component: UserListComponent },
-  { path: `profile`, component: UserDetailComponent }
+  { path: `users/:id`, component: UserDetailComponent }
 ]
 
 
@@ -21,6 +21,7 @@ const routes: Routes = [
     RouterModule.forChild(routes)
 
   ],
+  exports: [UserListItemComponent],
   declarations: [UserDasboardComponent, UserDetailComponent, UserListComponent, UserListItemComponent],
   providers: [UserService]
 })

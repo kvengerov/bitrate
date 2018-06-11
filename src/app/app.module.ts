@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { environment } from '../environments/environment';
 
 import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { CoreModule} from './core/core.module';
 import { AppRoutingModule } from './app.routing.module';
@@ -21,8 +22,6 @@ import { HomeComponent } from './component/home/home.component';
 
 import { LastfmService } from './service/lastfm.service';
 import { TokenService } from './service/token.service';
-
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthGuard } from './service/auth.guard';

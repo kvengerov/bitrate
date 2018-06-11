@@ -1,0 +1,36 @@
+.photoURL {
+  border-radius: 50px;
+  border: 2px solid #fff;
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  vertical-align: middle;
+  text-align: center;
+  color: transparent;
+  transition: all .3s ease;
+  text-decoration: none;
+  float: left;
+  margin-left: 15px;
+}
+.photoURL:hover {
+  background-color: rgba(0,0,0,.5);
+  z-index: 9999;
+  color: #FFFFFF;
+  transition: all .3s ease;
+  text-decoration: none;
+}
+.photoURL label {
+  display: inline-block;
+  padding-top: 4.5em;
+  padding-bottom: 4.5em;
+}
+.uploadPhoto {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}

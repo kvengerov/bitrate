@@ -1,3 +1,14 @@
-<p>
-  user-dasboard works!
-</p>
+<ng-container *ngIf="user">
+  <div>
+    <div class="hero">
+      <div class="photoURL" [ngStyle]="{'background-image': 'url(' + user.photoURL + ')'}">
+        <input type="file" accept="image/*" name="file" id="file" class="uploadPhoto" (change)="uploadPhotoURL($event)">
+        <label for="file">Change Photo</label>
+      </div>
+      <div class="hero-text">
+        <h1>{{user.displayName}}</h1>
+        <p>{{user.email}}</p>
+      </div>
+    </div>
+  </div>
+</ng-container>
