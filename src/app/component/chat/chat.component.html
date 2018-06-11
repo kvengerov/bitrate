@@ -5,22 +5,33 @@
     <hr>
     <div class="app-message" id="app-message">
 
-      <div class="text-right">
-        <span class="badge badge-primary">Name</span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      <div *ngFor="let chat of chatService.chats"
+           [ngClass]="{ 'text-right': chatService._user.uid == chats.uid }">
+        <span class="badge"
+              [ngClass]="{ 'badge-primary': chatService._user.uid == chats.uid,
+                           'badge-success': chatService._user.uid != chats.uid }">User Name</span>
+        <p>{{ chat.message }}</p>
       </div>
 
-      <div>
-        <span class="badge badge-success">Name</span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      </div>
+      <!--<div class="text-right">-->
+        <!--<span class="badge badge-primary">Name</span>-->
+        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>-->
+      <!--</div>-->
+
+      <!--<div>-->
+        <!--<span class="badge badge-success">Name</span>-->
+        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>-->
+      <!--</div>-->
 
     </div>
 
-    <input type="text" name="message" [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="Enter message">
+    <input type="text" name="message" class="form-control" [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="Enter message">
 
   </div>
 </div>
+
+<!--{{ chat.userName}}-->
+
 <!--<div *ngIf="authService.isLoggedIn()">-->
 <!--<button (click)="authService.logout()">LOGOUT</button>-->
 <!--<input [(ngModel)]="msg" placeholder="Type message"/>-->

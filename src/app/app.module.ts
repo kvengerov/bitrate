@@ -26,6 +26,7 @@ import { TokenService } from './service/token.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthGuard } from './service/auth.guard';
 import { FormsModule } from '@angular/forms';
+import {ChatService} from './service/chat.service';
 
 
 
@@ -53,6 +54,7 @@ import { FormsModule } from '@angular/forms';
   ],
   providers: [
     AuthGuard,
+    ChatService,
     LastfmService,
     TokenService,
     {

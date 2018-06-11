@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
 import 'rxjs/add/operator/switchMap';
 import { Md5 } from 'ts-md5/dist/md5';
+import {ChatService} from './chat.service';
 
 
 interface User {
@@ -23,7 +24,7 @@ export class AuthService {
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
-    private router: Router
+    private router: Router,
   ) {
     this.user = this.afAuth.authState.switchMap(user => {
       if (user) {
@@ -32,14 +33,6 @@ export class AuthService {
         return Observable.of(null);
       }
     });
-    // this.user.subscribe(user => {
-    //   if (user) {
-    //     this.userDetails = user;
-    //     console.log(this.userDetails);
-    //   } else {
-    //     this.userDetails = null;
-    //   }
-    // });
   }
   loginWithGoogle(): Observable<any> {
     return Observable.fromPromise(
