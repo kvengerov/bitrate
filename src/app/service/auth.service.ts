@@ -21,6 +21,8 @@ export class AuthService {
   public user: Observable<User>;
   private userDetails: any;
 
+  authState: any = null;
+
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
@@ -32,6 +34,10 @@ export class AuthService {
       } else {
         return Observable.of(null);
       }
+    });
+
+    this.afAuth.authState.subscribe((auth) => {
+      this.authState = auth;
     });
   }
   loginWithGoogle(): Observable<any> {
@@ -96,5 +102,12 @@ export class AuthService {
       uid: this.userDetails.uid
     };
   }
+  get authenticated(): boolean {
+    return this.authState !== null;
+  }
+  get currentUserId(): string {
+    return this.authenticated ? this.authState.uid : '';
+  }
+
 
 }

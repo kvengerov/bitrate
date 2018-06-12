@@ -19,6 +19,7 @@ import { PopularItemComponent } from './component/popular/popular-list/popular-i
 import { PopularListComponent } from './component/popular/popular-list/popular-list.component';
 import { ChatComponent } from './component/chat/chat.component';
 import { HomeComponent } from './component/home/home.component';
+import { SearchComponent } from './component/search/search.component';
 
 import { LastfmService } from './service/lastfm.service';
 import { TokenService } from './service/token.service';
@@ -26,9 +27,8 @@ import { TokenService } from './service/token.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthGuard } from './service/auth.guard';
 import { FormsModule } from '@angular/forms';
-import {ChatService} from './service/chat.service';
-
-
+import { ChatService } from './service/chat.service';
+import {SearchService} from './component/search/search.service';
 
 
 @NgModule({
@@ -40,6 +40,7 @@ import {ChatService} from './service/chat.service';
     PopularListComponent,
     HomeComponent,
     ChatComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +54,7 @@ import {ChatService} from './service/chat.service';
     NgbModule.forRoot()
   ],
   providers: [
+    SearchService,
     AuthGuard,
     ChatService,
     LastfmService,

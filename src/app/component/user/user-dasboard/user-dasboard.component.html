@@ -1,14 +1,63 @@
+<div class="container">
+<div>
+  <button mat-raised-button color="primary" (click)="edition=false" *ngIf="edition"><mat-icon>arrow_back </mat-icon>Done</button>
+  <button mat-raised-button color="primary" (click)="edition=true" *ngIf="!edition">Edit Profile</button>
+</div>
+
 <ng-container *ngIf="user">
-  <div>
-    <div class="hero">
-      <div class="photoURL" [ngStyle]="{'background-image': 'url(' + user.photoURL + ')'}">
-        <input type="file" accept="image/*" name="file" id="file" class="uploadPhoto" (change)="uploadPhotoURL($event)">
-        <label for="file">Change Photo</label>
-      </div>
-      <div class="hero-text">
-        <h1>{{user.displayName}}</h1>
-        <p>{{user.email}}</p>
+  <div [hidden]="edition">
+    <div>
+      <div class="hero">
+        <div class="photoURL" [ngStyle]="{'background-image': 'url(' + user.photoURL + ')'}">
+          <input type="file" accept="image/*" name="file" id="file" class="uploadPhoto" (change)="uploadPhotoURL($event)">
+          <label for="file">Change Photo</label>
+        </div>
+        <div class="hero-text">
+          <h1>{{user.displayName}}</h1>
+          <p><span class="p-head">Email:</span>  <span class="user-info">{{user.email}}</span></p>
+          <p><span class="p-head">Name:</span> <span class="user-info">{{user.name}}</span></p>
+          <p><span class="p-head">Lastname:</span> <span class="user-info">{{user.lastName}}</span></p>
+          <p><span class="p-head">Location:</span> <span class="user-info">{{user.location}}</span></p>
+          <p><span class="p-head">Website:</span> <span class="user-info">
+            <a href="http://{{user.website}}">{{user.website}}</a></span></p>
+        </div>
       </div>
     </div>
   </div>
+  <div [hidden]="!edition">
+    <mat-card>
+      <mat-form-field>
+        <input matInput placeholder="Update your name" [(ngModel)]="user.displayName">
+        <mat-icon matSuffix (click)="updateProfile()">save</mat-icon>
+        <mat-hint align="end">Save</mat-hint>
+      </mat-form-field>
+    </mat-card>
+    <mat-card>
+      <mat-form-field>
+        <input matInput placeholder="Update your email" [(ngModel)]="user.email">
+        <mat-icon matSuffix (click)="updateEmail()">save</mat-icon>
+        <mat-hint align="end">Save</mat-hint>
+      </mat-form-field>
+    </mat-card>
+    <mat-card>
+      <form (ngSubmit)="updateUser()">
+        <mat-form-field>
+          <input matInput placeholder="Update your Name" name="name" [(ngModel)]="user.name">
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="Update your Lastname" name="lastName" [(ngModel)]="user.lastName">
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="Update your Location" name="location" [(ngModel)]="user.location">
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="Update your Website" name="website" [(ngModel)]="user.website">
+        </mat-form-field><br>
+        <div class="btn">
+        <button mat-raised-button type="submit" color="accent" class="save-btn">Save</button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
 </ng-container>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+  <p>
+    search component
+  </p>
+
+  <input [(ngModel)]="track" (keyup.enter)="searchTrack()">
+
+  <ul *ngIf="results">
+    <li *ngFor="let result of results">
+      <a href="{{ result.latest }}" target="_blank">
+        {{ result.name }}
+      </a>
+    </li>
+  </ul>
+</div>

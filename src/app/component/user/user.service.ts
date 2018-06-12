@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable } from 'rxjs/Observable';
 
 import { User } from './user.model';
+import { AuthService } from '../../service/auth.service';
 
 @Injectable()
 export class UserService {
@@ -11,7 +12,8 @@ export class UserService {
   userDoc: AngularFirestoreDocument<User>;
 
   constructor(
-    private afs: AngularFirestore
+    private afs: AngularFirestore,
+    private auth: AuthService
   ) { }
 
   getUsers() {
@@ -21,6 +23,30 @@ export class UserService {
   getUser(id: string) {
     this.userDoc = this.afs.doc<User>(`users/${id}`);
     return this.userDoc.valueChanges();
+  }
+  updateProfileData(displayName: string, photoURL: string) {
+    const user = this.auth.authState;
+    const data = {displayName, photoURL};
+    return user.updateProfile(data)
+    .then(() => this.afs.doc(`users/${user.uid}`).update({displayName, photoURL}))
+    .then(() => console.log(`You profile has been updated`))
+    .catch(error => console.log(error.message));
+  }
+  updateEmailData(email: string) {
+    const user = this.auth.authState;
+    return user.updateEmail(email)
+      .then(() => this.afs.doc(`users/${user.uid}`).update({email}))
+      .then(() => console.log(`You email has been updated` + email))
+      .then(user => {
+        this.auth.authState.sendEmailVerification()
+          .then(() => console.log(`We sent you an email verification`))
+          .catch(error => console.log(error.message));
+      })
+      .catch(error => console.log(error.message));
+  }
+  updateUserData(data) {
+    const uid = this.auth.currentUserId;
+    return this.afs.doc(`users/${uid}`).update(data);
   }
 
 }

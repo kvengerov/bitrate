@@ -34,3 +34,29 @@
   position: absolute;
   z-index: -1;
 }
+mat-form-field {
+  width: 50%;
+  margin-left: 220px;
+}
+.hero-text {
+  margin-left: 220px;
+  margin-top: 30px;
+}
+.hero-text p {
+  margin:5px;
+  padding:20px;
+  background-color:#eee;
+  border-style:solid;
+  border-width:1px;
+  text-align:justify;
+  text-indent:30px;
+}
+.p-head {
+  font-weight: bold;
+}
+.user-info {
+  padding: 20px;
+}
+.btn {
+  display: block;
+}
