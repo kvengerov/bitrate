@@ -92,7 +92,8 @@ export class AuthService {
   getUser() {
     return {
       name: this.userDetails.displayName,
-      email: this.userDetails.email
+      email: this.userDetails.email,
+      uid: this.userDetails.uid
     };
   }
 
