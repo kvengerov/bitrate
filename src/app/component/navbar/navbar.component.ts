@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private search: SearchComponent) {
+    public search: SearchComponent) {
     authService.isAuthentificates()
       .subscribe(
         success => this.isLoggedIn = success

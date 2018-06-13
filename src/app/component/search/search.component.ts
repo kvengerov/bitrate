@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit {
   searchTrack(trk: string) {
     console.log(this.track);
     this.searchService.trackSearch(this.track)
-      .subscribe(results => {
+      .subscribe((results: any) => {
         this.results = results.results;
       });
   }

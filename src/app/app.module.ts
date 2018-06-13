@@ -28,7 +28,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthGuard } from './service/auth.guard';
 import { FormsModule } from '@angular/forms';
 import { ChatService } from './service/chat.service';
-import {SearchService} from './component/search/search.service';
+import { SearchService } from './component/search/search.service';
+import { PlayerComponent } from './component/player/player.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import {SearchService} from './component/search/search.service';
     PopularListComponent,
     HomeComponent,
     ChatComponent,
-    SearchComponent
+    SearchComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,

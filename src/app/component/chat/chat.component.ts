@@ -18,7 +18,7 @@ export class ChatComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private afDb: AngularFireDatabase,
-    private chatService: ChatService
+    public chatService: ChatService
   ) {
     this.chatService.loadMessage()
       .subscribe(() => {

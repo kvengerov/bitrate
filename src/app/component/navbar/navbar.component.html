@@ -23,7 +23,7 @@
             <li>
               <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                       [(ngModel)]="search.track" (keyup.enter)="search.searchTrack()" >
+                       [(ngModel)]="search.track" (keyup.enter)="search.searchTrack(search.track)" >
                 <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
               </form>
             </li>
@@ -70,4 +70,4 @@
 </div>
 <!--=======END navigation=======-->
 
-<a class="fixedbut" [routerLink]="['/chat']" *ngIf="isLoggedIn">Chat!</a>
+<a class="fixedbut" [routerLink]="['/chat']" *ngIf="isLoggedIn"><i class="fa fa-comments-o" aria-hidden="true"></i></a>

@@ -3,7 +3,7 @@
     search component
   </p>
 
-  <input [(ngModel)]="track" (keyup.enter)="searchTrack()">
+  <input [(ngModel)]="track" (keyup.enter)="searchTrack(track)">
 
   <ul *ngIf="results">
     <li *ngFor="let result of results">
