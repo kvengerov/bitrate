@@ -9,7 +9,7 @@ export interface Track {
 
 @Injectable()
 export class LastfmService {
-  private rootUrl = 'http://ws.audioscrobbler.com/2.0/';
+  private rootUrl = 'https://ws.audioscrobbler.com/2.0/';
 
   constructor(private httpClient: HttpClient) {}
 
