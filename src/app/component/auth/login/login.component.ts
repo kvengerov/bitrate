@@ -17,11 +17,10 @@ export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
   public hide = true;
-  public user$ = this.auth.user;
 
   constructor(
     private fB: FormBuilder,
-    private auth: AuthService,
+    public auth: AuthService,
     private router: Router
   ) {
     this.loginForm = this.fB.group({
@@ -48,21 +47,28 @@ export class LoginComponent implements OnInit {
   login() {
     return this.auth.login(this.email.value, this.password.value)
       .subscribe(
-        success => this.router.navigate(['/']),
+        success => this.router.navigate([`/`]),
         error => alert(error)
       );
   }
-  loginWithGoogle() {
-    this.auth.loginWithGoogle()
+  googleLogin() {
+    return this.auth.googleLogin()
       .subscribe(
-        success => this.router.navigate(['/']),
+        success => this.router.navigate([`/`]),
         error => alert(error)
       );
   }
-  loginWithFacebook() {
-    this.auth.loginWithFacebook()
+  facebookLogin() {
+    return this.auth.facebookLogin()
       .subscribe(
-        success => this.router.navigate(['/']),
+        success => this.router.navigate([`/`]),
+        error => alert(error)
+      );
+  }
+  twitterLogin() {
+    return this.auth.twitterLogin()
+      .subscribe(
+        success => this.router.navigate([`/`]),
         error => alert(error)
       );
   }

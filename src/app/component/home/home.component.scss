@@ -32,11 +32,11 @@
 }
 .main-artist {
   height: 32px;
-  width: 272px;
+  //width: 272px;
   color: #FFFFFF;
   font-size: 36px;
   font-weight: 500;
-  line-height: 34px;
+  line-height: 85px;
   padding-bottom: 30px;
 }
 .main-description {
@@ -81,7 +81,6 @@
 .col-3 {
   max-width: 220px;
 }
-
 ul {
   list-style: none;
   padding: 0;
@@ -138,64 +137,8 @@ a {
   color: #fff;
   text-decoration: none;
 }
+.row {
+   margin-bottom: 35px;
+ }
+
 /*=======END section top=======*/
-
-
-
-
-//.row {
-//  display: flex;
-//  align-items: stretch;
-//  align-content: space-between;
-//  justify-content: space-between;
-//  flex-flow: row nowrap;
-//  margin-left: 0;
-//  margin-right: 0;
-//}
-//
-//.row-wrap {
-//  flex-flow: row wrap;
-//}
-//
-//
-//
-//.card-one {
-//  width: 50%;
-//}
-//
-//.bit-1 {
-//  height: 500px;
-//}
-//
-//.card-four {
-//  width: 50%;
-//}
-//
-//.bit-2 {
-//  width: 50%;
-//  height: 250px;
-//}
-//
-//.bit-3 {
-//  width: 50%;
-//  height: 200px;
-//}
-//
-///* Доп. стили для стилизации */
-//.wrap {
-//  padding: 1rem;
-//  margin: 0 auto;
-//}
-//
-//[class*="bit-"] {
-//  padding: 15px;
-//}
-//
-//.img {
-//  background: deepskyblue;
-//  height: 100%;
-//}
-//
-//.card-line {
-//  width: 100%;
-//}

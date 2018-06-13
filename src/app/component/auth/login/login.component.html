@@ -2,8 +2,9 @@
   <section class="login-container">
     <h1>Login to Account</h1><br>
 
-    <i class="fa fa-facebook"></i><button mat-raised-button type="submit" color="primary" (click)="loginWithFacebook()">Continue with Facebook</button>
-    <i class="fa fa-google"></i><button mat-raised-button type="submit" color="warn" (click)="loginWithGoogle()">Continue with Google</button>
+    <div><i class="fa fa-facebook"></i><button class="btn-social" mat-raised-button type="submit" color="primary" (click)="facebookLogin()">Continue with Facebook</button></div>
+    <div><i class="fa fa-google"></i><button class="btn-social" mat-raised-button type="submit" color="warn" (click)="googleLogin()">Continue with Google</button></div>
+    <div><i class="fa fa-twitter"></i><button class="btn-social btn-twitter" mat-raised-button type="submit" (click)="twitterLogin()">Continue with Twitter</button></div>
 
     <p class="text-or">OR</p>
 
@@ -29,9 +30,6 @@
 
     </form>
 
-    <!--<div class="login-help">-->
-      <!--<a href="/register">Register</a> - <a href="/reset-password">Forgot Password</a>-->
-    <!--</div>-->
   </section>
 </main>
 
@@ -40,5 +38,3 @@
   <!--response_type=token&scope=user_location,publish_actions&-->
   <!--redirect_uri=http://localhost:4200/facebook/auth" class="button">Sign In with Facebook SDK</a>-->
 
-<!--<br>-->
-<!--{{ user$ | async | json }}-->

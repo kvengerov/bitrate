@@ -20,8 +20,7 @@ interface User {
 export class AuthService {
   public user: Observable<User>;
   private userDetails: any;
-
-  authState: any = null;
+  public authState: any = null;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -35,20 +34,32 @@ export class AuthService {
         return Observable.of(null);
       }
     });
-
-    this.afAuth.authState.subscribe((auth) => {
-      this.authState = auth;
-    });
+    this.afAuth.authState.subscribe((auth) =>  this.authState = auth);
   }
-  loginWithGoogle(): Observable<any> {
+  googleLogin(): Observable<any> {
+    const provider = new firebase.auth.GoogleAuthProvider()
     return Observable.fromPromise(
-      this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      this.socialLogin(provider)
     );
   }
-  loginWithFacebook(): Observable<any> {
+  facebookLogin(): Observable<any> {
+    const provider = new firebase.auth.FacebookAuthProvider()
     return Observable.fromPromise(
-      this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
+      this.socialLogin(provider)
     );
+  }
+  twitterLogin(): Observable<any> {
+    const provider = new firebase.auth.TwitterAuthProvider()
+    return Observable.fromPromise(
+      this.socialLogin(provider)
+    );
+  }
+  private socialLogin(provider) {
+    return this.afAuth.auth.signInWithPopup(provider)
+      .then(credential => {
+        return this.updateUserData(credential.user);
+      })
+      .catch(error => console.log(error.message));
   }
   login(email, password): Observable<any> {
     return Observable.fromPromise(
@@ -106,8 +117,6 @@ export class AuthService {
     return this.authState !== null;
   }
   get currentUserId(): string {
-    return this.authenticated ? this.authState.uid : '';
+    return this.authenticated ? this.authState.uid : null;
   }
-
-
 }

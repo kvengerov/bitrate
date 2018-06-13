@@ -1,73 +1,50 @@
-<!--=======navigation=======-->
-<div class="container navigation">
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-    <div class="container">
-      <!--<a href="#" class="navbar-brand text-warning font-weight-bold">Site</a>-->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="collapsenavbar">
-        <div class="navbar-inner">
-          <ul class="navbar-nav mr-auto">
-
-            <li class="nav-item first">
-              <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/collection']">Collection</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/upload']">Upload</a>
-            </li>
-            <li>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                       [(ngModel)]="search.track" (keyup.enter)="search.searchTrack(search.track)" >
-                <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-              </form>
-            </li>
-
-            <!--<li class="nav-item dropdown" *ngIf="user">-->
-                <!--<div *ngIf="isLoggedIn" class="nav-link dropdown-toggle" id="userprofile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">-->
-                  <!--<ul>-->
-                    <!--<li><img class="avatar" [src]="user.photoURL" alt="{{user.displayName}}"></li>-->
-                    <!--<li><p>{{user.displayName}}</p></li>-->
-                  <!--</ul>-->
-                <!--</div>-->
-              <!--<div class="dropdown-menu" aria-labelledby="userprofile">-->
-                <!--<a class="dropdown-item" href="#">Profile</a>-->
-                <!--<a class="dropdown-item" href="#">Help</a>-->
-                <!--<a class="dropdown-item" (click)="logout()" [routerLink]="['/']" *ngIf="isLoggedIn">Sign Out</a>-->
-              <!--</div>-->
-            <!--</li>-->
-
-            <li class="nav-item" *ngIf="user">
-              <div *ngIf="isLoggedIn" routerLink="/me">
-                <ul>
-                  <li><img class="avatar" [src]="user.photoURL || '//:0'" alt="{{user.displayName}}"></li>
-                  <li><p>{{user.displayName}}</p></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link first" [routerLink]="['/login']" *ngIf="!isLoggedIn">Sign In</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link first" (click)="logout()" [routerLink]="['/']" *ngIf="isLoggedIn">Logout</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/register']" *ngIf="!isLoggedIn">Create account</a>
-            </li>
-            <li class="nav-item">
-              <a [routerLink]="['/']" class="nav-link">En</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/" routerLinkActive="active">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/collection">Collection</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/upload">Upload</a>
+        </li>
+        <li class="nav-item">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                   [(ngModel)]="search.track" (keyup.enter)="search.searchTrack(search.track)" >
+          </form>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle profile" *ngIf="user" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <ul>
+              <li><img class="avatar" [src]="user.photoURL || '//:0'" alt="{{user.displayName}}"></li>
+              <li><p>{{user.displayName}}</p></li>
+            </ul>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="profile">
+            <a class="dropdown-item" routerLink="/me">Profile</a>
+            <a class="dropdown-item" (click)="logout()" routerLink="/" *ngIf="isLoggedIn">Sign Out</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link first" routerLink="/login" *ngIf="!isLoggedIn">Sign In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/register" *ngIf="!isLoggedIn">Create account</a>
+        </li>
+        <li class="nav-item disabled">
+          <a class="nav-link">En</a>
+        </li>
+      </ul>
     </div>
   </nav>
 </div>
-<!--=======END navigation=======-->
 
-<a class="fixedbut" [routerLink]="['/chat']" *ngIf="isLoggedIn"><i class="fa fa-comments-o" aria-hidden="true"></i></a>
+<a class="chat-btn" [routerLink]="['/chat']" *ngIf="isLoggedIn"><i class="fa fa-comments-o" aria-hidden="true"></i></a>
