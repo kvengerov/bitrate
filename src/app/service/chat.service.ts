@@ -31,8 +31,8 @@ export class ChatService {
       if (!user) {
         return;
       }
-      this._user.userName = authService.getUser().name;
-      this._user.uid = authService.getUser().uid;
+      this._user.userName = user.displayName;
+      this._user.uid = user.uid;
     });
   }
 
@@ -51,10 +51,10 @@ export class ChatService {
 
   addMessage( text: string ) {
     const message: Message = {
-      userName: this._user,
+      userName: this._user.userName,
       message: text,
       date: new Date().getTime(),
-      uid: this._user
+      uid: this._user.uid
     };
     return this.itemsCollection.add(message);
   }
