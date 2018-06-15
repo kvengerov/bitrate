@@ -25,16 +25,4 @@ export class SearchService {
       }
     );
   }
-
-
-  searchEntries(term) {
-    return this.httpClient
-      .get(this.baseUrl + this.queryUrl + term,
-        {
-          observe: 'body',
-          responseType: 'json'
-        }
-      );
-  }
-
 }
