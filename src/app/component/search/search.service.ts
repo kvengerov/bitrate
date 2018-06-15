@@ -6,9 +6,8 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class SearchService {
 
-  baseUrl = 'https://api.cdnjs.com/libraries';
   queryUrl = '?search=';
-  private rootUrl = 'http://ws.audioscrobbler.com/2.0/';
+  private rootUrl = 'https://ws.audioscrobbler.com/2.0/';
 
   constructor(private httpClient: HttpClient) {}
 
